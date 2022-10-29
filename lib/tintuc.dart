@@ -1,4 +1,4 @@
-import 'package:doan_lt_didong/trangchu.dart';
+import 'package:doan_android/trangchu.dart';
 import 'package:flutter/material.dart';
 
 class TinTuc_App extends StatelessWidget {

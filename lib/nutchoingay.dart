@@ -1,6 +1,5 @@
-import 'package:doan_lt_didong/choingay.dart';
+import 'package:doan_android/choingay.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class playButton extends StatefulWidget {
   @override
@@ -45,8 +44,7 @@ class playButton_State extends State<playButton> {
           ),
           label: Text(
             'CHƠI NGAY',
-            style: GoogleFonts.lato(
-              textStyle: Theme.of(context).textTheme.headline2,
+            style: TextStyle(
               fontSize: 20,
               color: Colors.white,
               fontWeight: FontWeight.w600,

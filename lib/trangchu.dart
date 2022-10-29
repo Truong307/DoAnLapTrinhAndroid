@@ -1,10 +1,7 @@
 import 'dart:ui';
-import 'package:doan_lt_didong/nutchoingay.dart';
-import 'package:doan_lt_didong/thongbao.dart';
+import 'package:doan_android/nutchoingay.dart';
+import 'package:doan_android/thongbao.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart'; // Thư viện kiểu chữ
-import 'package:ionicons/ionicons.dart';
-import 'package:iconsax/iconsax.dart';
 
 class TrangChu extends StatefulWidget {
   @override

@@ -1,7 +1,5 @@
-import 'package:doan_lt_didong/trangchu.dart';
+import 'package:doan_android/trangchu.dart';
 import 'package:flutter/material.dart';
-import 'package:ionicons/ionicons.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class GuiThachDau extends StatefulWidget {
   @override
@@ -10,18 +8,6 @@ class GuiThachDau extends StatefulWidget {
 
 class GuiThachDau_State extends State<GuiThachDau> {
   //=========================================//
-  Text _text(String lable) {
-    return Text(
-      lable,
-      textAlign: TextAlign.center,
-      style: GoogleFonts.lato(
-        textStyle: Theme.of(context).textTheme.headline4,
-        fontSize: 15,
-        color: Colors.black,
-        fontWeight: FontWeight.w900,
-      ),
-    );
-  }
 
   //==========================================//
   @override
