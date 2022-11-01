@@ -1,7 +1,8 @@
-import 'package:doan_lt_didong/trangchu.dart';
+import 'package:doan_android/man_hinh_choi.dart';
+import 'package:doan_android/nutchoingay.dart';
+import 'package:doan_android/test.dart';
+import 'package:doan_android/trangchu.dart';
 import 'package:flutter/material.dart';
-import 'package:ionicons/ionicons.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class ChoiNgay extends StatefulWidget {
   @override
@@ -10,19 +11,6 @@ class ChoiNgay extends StatefulWidget {
 
 class ChoiNgay_State extends State<ChoiNgay> {
   //=========================================//
-  Text _text(String lable) {
-    return Text(
-      lable,
-      textAlign: TextAlign.center,
-      style: GoogleFonts.lato(
-        textStyle: Theme.of(context).textTheme.headline4,
-        fontSize: 15,
-        color: Colors.black,
-        fontWeight: FontWeight.w900,
-      ),
-    );
-  }
-
   //==========================================//
   @override
   Widget build(BuildContext context) {
@@ -387,7 +375,14 @@ class ChoiNgay_State extends State<ChoiNgay> {
                 shadowColor: Colors.black,
                 elevation: 20,
               ),
-              onPressed: () {}, //Chưa xử lý
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => BatDauScreen(),
+                  ),
+                );
+              }, //Chưa xử lý
               child: const Padding(
                 padding: EdgeInsets.only(
                   left: 24,

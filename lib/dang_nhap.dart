@@ -1,6 +1,6 @@
-
 import 'package:doan_android/quen_mat_khau.dart';
 import 'package:doan_android/dang_ky.dart';
+import 'package:doan_android/trangchu.dart';
 import 'package:flutter/material.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -11,13 +11,16 @@ class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         title: const Text('Đăng Nhập'),
+        centerTitle: true,
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Container(
+          /*Container(
             margin: const EdgeInsets.all(30),
             child: const Text(
               "Đăng Nhập",
@@ -26,7 +29,7 @@ class LoginScreen extends StatelessWidget {
                 fontWeight: FontWeight.w500,
               ),
             ),
-          ),
+          ),*/
           Column(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
@@ -41,55 +44,59 @@ class LoginScreen extends StatelessWidget {
                 children: [
                   Container(
                     padding: EdgeInsets.only(left: 15),
-                    child: const Text("Tài khoản",
-                  style: TextStyle(
-                   fontSize: 18,
-                   fontWeight: FontWeight.w700,
-                 ),
-                 ),
+                    child: const Text(
+                      "Tài khoản",
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.w700,
+                      ),
+                    ),
                   ),
                 ],
               ),
               Container(
-            padding: const EdgeInsets.all(15),
-            child: TextField(
-              controller: str1,
-              decoration: const InputDecoration(
-                //hintText: 'Nhập Tài Khoản',
-                border: OutlineInputBorder(),
-                prefixIcon: Icon(Icons.person),
+                padding: const EdgeInsets.all(15),
+                child: TextField(
+                  controller: str1,
+                  decoration: const InputDecoration(
+                    //hintText: 'Nhập Tài Khoản',
+                    border: OutlineInputBorder(),
+                    prefixIcon: Icon(Icons.person),
+                  ),
+                ),
               ),
-            ),
-          ),
             ],
           ),
           Column(
             mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
-                padding: EdgeInsets.only(right: 380),
-                child: Text("Mật Khẩu",
-                style: TextStyle(
-                  fontSize: 18,
-                  fontWeight: FontWeight.w700,
+                padding: EdgeInsets.only(
+                  left: 15,
                 ),
+                child: Text(
+                  "Mật Khẩu",
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.w700,
+                  ),
                 ),
               ),
               Container(
-            padding: const EdgeInsets.all(15),
-            child: TextField(
-              controller: str2,
-              obscureText: true,
-              decoration: const InputDecoration(
-                //hintText: 'Nhập Mật Khẩu',
-                border: OutlineInputBorder(),
-                prefixIcon: Icon(Icons.password),
+                padding: const EdgeInsets.all(15),
+                child: TextField(
+                  controller: str2,
+                  obscureText: true,
+                  decoration: const InputDecoration(
+                    //hintText: 'Nhập Mật Khẩu',
+                    border: OutlineInputBorder(),
+                    prefixIcon: Icon(Icons.password),
+                  ),
+                ),
               ),
-            ),
-          ),
             ],
           ),
-          
           Container(
             padding: const EdgeInsets.all(15),
             child: ElevatedButton(
@@ -123,8 +130,14 @@ class LoginScreen extends StatelessWidget {
                               'Chúc mừng bạn đã đăng nhập thành công'),
                           actions: [
                             TextButton(
-                                onPressed: () => Navigator.pop(context),
-                                child: const Text('OK'))
+                              onPressed: () => Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => TrangChu(),
+                                ),
+                              ),
+                              child: const Text('OK'),
+                            ),
                           ],
                         );
                       });
@@ -186,7 +199,8 @@ class LoginScreen extends StatelessWidget {
                       });
                 }
               }, //Bổ sung 2
-              child: const Text('Đăng Nhập',
+              child: const Text(
+                'Đăng Nhập',
                 style: TextStyle(
                   fontSize: 20,
                 ),
@@ -194,44 +208,44 @@ class LoginScreen extends StatelessWidget {
             ),
           ),
           Container(
-            padding: const EdgeInsets.all(15),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            padding: const EdgeInsets.all(5),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Container(
-                  margin: const EdgeInsets.all(30),
+                  margin: const EdgeInsets.all(5),
                   child: TextButton(
-                  onPressed: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => ForgetPassword()));
-                  }, //Bổ sung 3
-                  child: const Text(
-                    'Quên Mật Khẩu',
-                    style: TextStyle(
-                      //decoration: TextDecoration.underline,
-                      color: Colors.black,
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => ForgetPassword()));
+                    }, //Bổ sung 3
+                    child: const Text(
+                      'Quên Mật Khẩu?',
+                      style: TextStyle(
+                        //decoration: TextDecoration.underline,
+                        color: Colors.black,
+                        fontSize: 15,
+                      ),
                     ),
                   ),
                 ),
-                ),
-                
                 Container(
-                  margin: const EdgeInsets.all(30),
                   child: TextButton(
-                  onPressed: () {
-                    Navigator.push(context,
-                    MaterialPageRoute(builder: (context)=>Register()));
-                  }, //Bổ sung 3
-                  child: const Text(
-                    'Đăng ký',
-                    style: TextStyle(
-                      //decoration: TextDecoration.underline,
-                      color: Colors.black,
+                    onPressed: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => Register()));
+                    }, //Bổ sung 3
+                    child: const Text(
+                      'Đăng ký',
+                      style: TextStyle(
+                        //decoration: TextDecoration.underline,
+                        color: Colors.black,
+                        fontSize: 15,
+                      ),
                     ),
                   ),
-                ),
                 ),
               ],
             ),

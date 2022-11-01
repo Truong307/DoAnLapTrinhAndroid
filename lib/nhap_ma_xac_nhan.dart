@@ -1,13 +1,29 @@
-import 'package:doan_android/nhap_ma_xac_nhan.dart';
+import 'package:doan_android/doi_mat_khau.dart';
 import 'package:flutter/material.dart';
 
-class ForgetPassword extends StatelessWidget {
+class Ma_Xac_Nhan extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Ma_Xac_Nhan_Home(),
+    );
+  }
+}
+
+class Ma_Xac_Nhan_Home extends StatefulWidget {
+  @override
+  State<Ma_Xac_Nhan_Home> createState() => Ma_Xac_Nhan_State();
+}
+
+class Ma_Xac_Nhan_State extends State<Ma_Xac_Nhan_Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Quên Mật Khẩu'),
         centerTitle: true,
+        automaticallyImplyLeading: true,
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -31,7 +47,7 @@ class ForgetPassword extends StatelessWidget {
                   left: 15,
                 ),
                 child: Text(
-                  "Email:",
+                  "Mã Xác Nhận:",
                   style: TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.w700,
@@ -45,7 +61,7 @@ class ForgetPassword extends StatelessWidget {
                   decoration: InputDecoration(
                     //labelText: 'Email',
                     border: OutlineInputBorder(),
-                    prefixIcon: Icon(Icons.email),
+                    prefixIcon: Icon(Icons.person),
                   ),
                 ),
               ),
@@ -62,12 +78,12 @@ class ForgetPassword extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => Ma_Xac_Nhan(),
+                    builder: (context) => change_password(),
                   ),
                 );
               },
               child: const Text(
-                'Gửi Yêu Cầu',
+                'Xác Nhận',
                 style: TextStyle(
                   fontSize: 20,
                 ),

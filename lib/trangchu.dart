@@ -1,10 +1,11 @@
 import 'dart:ui';
-import 'package:doan_lt_didong/nutchoingay.dart';
-import 'package:doan_lt_didong/thongbao.dart';
+import 'package:doan_android/banbe.dart';
+import 'package:doan_android/bangxephang.dart';
+import 'package:doan_android/canhan.dart';
+import 'package:doan_android/nutchoingay.dart';
+import 'package:doan_android/thongbao.dart';
+import 'package:doan_android/tintuc.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart'; // Thư viện kiểu chữ
-import 'package:ionicons/ionicons.dart';
-import 'package:iconsax/iconsax.dart';
 
 class TrangChu extends StatefulWidget {
   @override
@@ -21,11 +22,11 @@ class TrangChu_State extends State<TrangChu> {
   }
 
   List<Widget> lsSreen = [
-    Text('Màn hình xếp hạng'),
-    Text('Màn hình tin tức '),
+    bangXepHangStateLess(),
+    TinTuc_App(),
     playButton(),
-    Text('Màn hình bạn bè'),
-    Text('Màn hình hồ sơ'),
+    banBe_Screen(),
+    caNhan_Screen(),
   ];
 
   @override
@@ -38,14 +39,14 @@ class TrangChu_State extends State<TrangChu> {
         title: Row(
           children: [
             CircleAvatar(
-              child: Image.asset("images/user.png"),
+              child: Image.asset("images/hacker.png"),
             ),
             Expanded(
               flex: 1,
               child: Container(
                 margin: EdgeInsets.only(left: 10),
                 child: Text(
-                  'Admin',
+                  'truong307',
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     color: Colors.black,
@@ -75,7 +76,7 @@ class TrangChu_State extends State<TrangChu> {
               tooltip: 'Thông báo',
               //icon: Image.asset("images/bell.png"),
               icon: const Icon(
-                Icons.more_vert,
+                Icons.history,
                 color: Colors.grey,
               ),
               iconSize: 30,
@@ -91,49 +92,56 @@ class TrangChu_State extends State<TrangChu> {
           ],
         ),
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        selectedItemColor: Colors.blueAccent,
-        backgroundColor: Colors.amber,
-        unselectedItemColor: Colors.grey,
-        currentIndex: _selectedIndex,
-        onTap: OntabSelected,
-        items: [
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.signal_cellular_alt_outlined,
-              size: 30,
-            ),
-            label: 'Xếp Hạng',
+      bottomNavigationBar: Container(
+        decoration: BoxDecoration(
+          border: Border(
+            top: BorderSide(color: Colors.black, width: 1.0),
           ),
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.newspaper_outlined,
-              size: 30,
+        ),
+        child: BottomNavigationBar(
+          selectedItemColor: Colors.blueAccent,
+          backgroundColor: Colors.amber,
+          unselectedItemColor: Colors.grey,
+          currentIndex: _selectedIndex,
+          onTap: OntabSelected,
+          items: [
+            BottomNavigationBarItem(
+              icon: Icon(
+                Icons.signal_cellular_alt_outlined,
+                size: 40,
+              ),
+              label: 'Xếp Hạng',
             ),
-            label: 'Tin Tức',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.home_outlined,
-              size: 30,
+            BottomNavigationBarItem(
+              icon: Icon(
+                Icons.newspaper_outlined,
+                size: 40,
+              ),
+              label: 'Tin Tức',
             ),
-            label: 'Trang Chủ',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.people_outline,
-              size: 30,
+            BottomNavigationBarItem(
+              icon: Icon(
+                Icons.home_outlined,
+                size: 60,
+              ),
+              label: 'Trang Chủ',
             ),
-            label: 'Bạn Bè',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.person_outline,
-              size: 30,
+            BottomNavigationBarItem(
+              icon: Icon(
+                Icons.people_outline,
+                size: 40,
+              ),
+              label: 'Bạn Bè',
             ),
-            label: 'Hồ Sơ',
-          ),
-        ],
+            BottomNavigationBarItem(
+              icon: Icon(
+                Icons.person_outline,
+                size: 40,
+              ),
+              label: 'Hồ Sơ',
+            ),
+          ],
+        ),
       ),
       body: lsSreen[_selectedIndex],
     );

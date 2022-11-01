@@ -1,6 +1,5 @@
-import 'package:doan_lt_didong/trangchu.dart';
+import 'package:doan_android/trangchu.dart';
 import 'package:flutter/material.dart';
-import 'package:ionicons/ionicons.dart';
 
 class ThongBao_App extends StatelessWidget {
   @override
