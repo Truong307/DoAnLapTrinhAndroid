@@ -23,20 +23,6 @@ class _bangXepHangState extends State<bangXepHangStateLess>
       appBar: AppBar(
         title: Row(
           children: [
-            Row(
-              children: [
-                Container(
-                  child: IconButton(
-                    splashRadius: 24,
-                    tooltip: 'Trở về',
-                    onPressed: () {},
-                    //========================//
-                    icon: Image.asset('images/undo.png'),
-                    iconSize: 40,
-                  ),
-                ),
-              ],
-            ),
             Padding(padding: EdgeInsets.all(50)),
             Text(
               'BẢNG XẾP HẠNG',
@@ -67,7 +53,7 @@ class _bangXepHangState extends State<bangXepHangStateLess>
               Text("Bạn bè")
             ]),
           ],
-          labelStyle: TextStyle(fontWeight: FontWeight.bold, fontSize: 22),
+          labelStyle: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
           unselectedLabelStyle:
               TextStyle(fontStyle: FontStyle.normal, fontSize: 18),
         ),
@@ -89,7 +75,7 @@ class _bangXepHangState extends State<bangXepHangStateLess>
                           children: [
                             Container(
                               height: 60,
-                              width: 500,
+                              width: 480,
                               decoration: BoxDecoration(
                                 border: Border(
                                     top: BorderSide(width: 1),
@@ -112,7 +98,7 @@ class _bangXepHangState extends State<bangXepHangStateLess>
                                     children: [
                                       Padding(
                                           padding: EdgeInsets.only(
-                                              right: 180, bottom: 20)),
+                                              right: 130, bottom: 20)),
                                       Text('Tên',
                                           style: TextStyle(
                                               color: Colors.black,
@@ -123,7 +109,7 @@ class _bangXepHangState extends State<bangXepHangStateLess>
                                     children: [
                                       Padding(
                                           padding: EdgeInsets.only(
-                                              right: 140, bottom: 20)),
+                                              right: 130, bottom: 20)),
                                       Text('Điểm',
                                           style: TextStyle(
                                               color: Colors.black,
@@ -156,7 +142,7 @@ class _bangXepHangState extends State<bangXepHangStateLess>
                                     children: [
                                       Padding(
                                           padding: EdgeInsets.only(
-                                              right: 180, bottom: 15)),
+                                              right: 130, bottom: 15)),
                                       Text('Nguyễn Văn A',
                                           style: TextStyle(
                                               color: Colors.black,
@@ -201,7 +187,7 @@ class _bangXepHangState extends State<bangXepHangStateLess>
                                     children: [
                                       Padding(
                                           padding: EdgeInsets.only(
-                                              right: 180, bottom: 20)),
+                                              right: 130, bottom: 20)),
                                       Text('Trần Thị B',
                                           style: TextStyle(
                                               color: Colors.black,
@@ -249,7 +235,7 @@ class _bangXepHangState extends State<bangXepHangStateLess>
                                     children: [
                                       Padding(
                                           padding: EdgeInsets.only(
-                                              right: 180, bottom: 20)),
+                                              right: 130, bottom: 20)),
                                       Text('Lê B D',
                                           style: TextStyle(
                                               color: Colors.black,
@@ -296,7 +282,7 @@ class _bangXepHangState extends State<bangXepHangStateLess>
                                     children: [
                                       Padding(
                                           padding: EdgeInsets.only(
-                                              right: 180, bottom: 20)),
+                                              right: 130, bottom: 20)),
                                       Text('Bạn',
                                           style: TextStyle(
                                               color: Colors.blue, fontSize: 17))
@@ -342,7 +328,7 @@ class _bangXepHangState extends State<bangXepHangStateLess>
                                     children: [
                                       Padding(
                                           padding: EdgeInsets.only(
-                                              right: 180, bottom: 20)),
+                                              right: 130, bottom: 20)),
                                       Text('Không có tên',
                                           style: TextStyle(
                                               color: Colors.black,
@@ -434,7 +420,7 @@ class _bangXepHangState extends State<bangXepHangStateLess>
                                     children: [
                                       Container(
                                         height: 60,
-                                        width: 500,
+                                        width: 480,
                                         decoration: BoxDecoration(
                                           border: Border(
                                               top: BorderSide(width: 1),
@@ -458,7 +444,7 @@ class _bangXepHangState extends State<bangXepHangStateLess>
                                               children: [
                                                 Padding(
                                                     padding: EdgeInsets.only(
-                                                        right: 180,
+                                                        right: 130,
                                                         bottom: 20)),
                                                 Text('Tên',
                                                     style: TextStyle(
@@ -470,7 +456,7 @@ class _bangXepHangState extends State<bangXepHangStateLess>
                                               children: [
                                                 Padding(
                                                     padding: EdgeInsets.only(
-                                                        right: 140,
+                                                        right: 130,
                                                         bottom: 20)),
                                                 Text('Điểm',
                                                     style: TextStyle(
@@ -506,7 +492,7 @@ class _bangXepHangState extends State<bangXepHangStateLess>
                                               children: [
                                                 Padding(
                                                     padding: EdgeInsets.only(
-                                                        right: 180,
+                                                        right: 130,
                                                         bottom: 15)),
                                                 Text('Nguyễn Văn A',
                                                     style: TextStyle(
@@ -555,7 +541,7 @@ class _bangXepHangState extends State<bangXepHangStateLess>
                                               children: [
                                                 Padding(
                                                     padding: EdgeInsets.only(
-                                                        right: 180,
+                                                        right: 130,
                                                         bottom: 20)),
                                                 Text('Trần Thị B',
                                                     style: TextStyle(
@@ -607,7 +593,7 @@ class _bangXepHangState extends State<bangXepHangStateLess>
                                               children: [
                                                 Padding(
                                                     padding: EdgeInsets.only(
-                                                        right: 180,
+                                                        right: 130,
                                                         bottom: 20)),
                                                 Text('Lê B D',
                                                     style: TextStyle(
@@ -644,7 +630,7 @@ class _bangXepHangState extends State<bangXepHangStateLess>
                                     children: [
                                       Container(
                                         height: 60,
-                                        width: 500,
+                                        width: 480,
                                         decoration: BoxDecoration(
                                           border: Border(
                                               top: BorderSide(width: 1),
@@ -668,7 +654,7 @@ class _bangXepHangState extends State<bangXepHangStateLess>
                                               children: [
                                                 Padding(
                                                     padding: EdgeInsets.only(
-                                                        right: 180,
+                                                        right: 130,
                                                         bottom: 20)),
                                                 Text('Tên',
                                                     style: TextStyle(
@@ -680,7 +666,7 @@ class _bangXepHangState extends State<bangXepHangStateLess>
                                               children: [
                                                 Padding(
                                                     padding: EdgeInsets.only(
-                                                        right: 140,
+                                                        right: 130,
                                                         bottom: 20)),
                                                 Text('Điểm',
                                                     style: TextStyle(
@@ -716,7 +702,7 @@ class _bangXepHangState extends State<bangXepHangStateLess>
                                               children: [
                                                 Padding(
                                                     padding: EdgeInsets.only(
-                                                        right: 180,
+                                                        right: 130,
                                                         bottom: 15)),
                                                 Text('Nguyễn Văn A',
                                                     style: TextStyle(
@@ -765,7 +751,7 @@ class _bangXepHangState extends State<bangXepHangStateLess>
                                               children: [
                                                 Padding(
                                                     padding: EdgeInsets.only(
-                                                        right: 180,
+                                                        right: 130,
                                                         bottom: 20)),
                                                 Text('Trần Thị B',
                                                     style: TextStyle(
@@ -817,217 +803,7 @@ class _bangXepHangState extends State<bangXepHangStateLess>
                                               children: [
                                                 Padding(
                                                     padding: EdgeInsets.only(
-                                                        right: 180,
-                                                        bottom: 20)),
-                                                Text('Lê B D',
-                                                    style: TextStyle(
-                                                        color: Colors.black,
-                                                        fontSize: 17))
-                                              ],
-                                            ),
-                                            Column(
-                                              children: [
-                                                Padding(
-                                                    padding: EdgeInsets.only(
                                                         right: 130,
-                                                        bottom: 20)),
-                                                Text(
-                                                  '7777',
-                                                  style: TextStyle(
-                                                    color: Colors.black,
-                                                    fontSize: 17,
-                                                  ),
-                                                ),
-                                              ],
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ]),
-                              ),
-                              Container(
-                                child: Column(children: [
-                                  Padding(padding: EdgeInsets.all(3)),
-                                  Row(
-                                    children: [
-                                      Container(
-                                        decoration: BoxDecoration(
-                                          border: Border(
-                                              top: BorderSide(width: 1),
-                                              bottom: BorderSide(width: 1)),
-                                        ),
-                                        height: 60,
-                                        width: 500,
-                                        child: Row(
-                                          children: [
-                                            Column(
-                                              children: [
-                                                Padding(
-                                                    padding: EdgeInsets.only(
-                                                        right: 160,
-                                                        bottom: 20)),
-                                                Text('Thứ hạng',
-                                                    style: TextStyle(
-                                                        color: Colors.black,
-                                                        fontSize: 17)),
-                                              ],
-                                            ),
-                                            Column(
-                                              children: [
-                                                Padding(
-                                                    padding: EdgeInsets.only(
-                                                        right: 180,
-                                                        bottom: 20)),
-                                                Text('Tên',
-                                                    style: TextStyle(
-                                                        color: Colors.black,
-                                                        fontSize: 17))
-                                              ],
-                                            ),
-                                            Column(
-                                              children: [
-                                                Padding(
-                                                    padding: EdgeInsets.only(
-                                                        right: 140,
-                                                        bottom: 20)),
-                                                Text('Điểm',
-                                                    style: TextStyle(
-                                                        color: Colors.black,
-                                                        fontSize: 17))
-                                              ],
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                  Row(
-                                    children: [
-                                      Container(
-                                        child: Row(
-                                          children: [
-                                            Column(
-                                              children: [
-                                                Padding(
-                                                    padding: EdgeInsets.only(
-                                                        right: 160,
-                                                        bottom: 15)),
-                                                Text('1',
-                                                    style: TextStyle(
-                                                        color: Colors.amber,
-                                                        fontSize: 17,
-                                                        fontWeight:
-                                                            FontWeight.bold)),
-                                              ],
-                                            ),
-                                            Column(
-                                              children: [
-                                                Padding(
-                                                    padding: EdgeInsets.only(
-                                                        right: 180,
-                                                        bottom: 15)),
-                                                Text('Nguyễn Văn A',
-                                                    style: TextStyle(
-                                                        color: Colors.black,
-                                                        fontSize: 17))
-                                              ],
-                                            ),
-                                            Column(
-                                              children: [
-                                                Padding(
-                                                    padding: EdgeInsets.only(
-                                                        right: 130,
-                                                        bottom: 15)),
-                                                Text('9999',
-                                                    style: TextStyle(
-                                                      color: Colors.black,
-                                                      fontSize: 17,
-                                                    ))
-                                              ],
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                  Row(
-                                    children: [
-                                      Container(
-                                        child: Row(
-                                          children: [
-                                            Column(
-                                              children: [
-                                                Padding(
-                                                    padding: EdgeInsets.only(
-                                                        right: 160,
-                                                        bottom: 20)),
-                                                Text('2',
-                                                    style: TextStyle(
-                                                        color: Colors.grey,
-                                                        fontSize: 17,
-                                                        fontWeight:
-                                                            FontWeight.bold)),
-                                              ],
-                                            ),
-                                            Column(
-                                              children: [
-                                                Padding(
-                                                    padding: EdgeInsets.only(
-                                                        right: 180,
-                                                        bottom: 20)),
-                                                Text('Trần Thị B',
-                                                    style: TextStyle(
-                                                        color: Colors.black,
-                                                        fontSize: 17))
-                                              ],
-                                            ),
-                                            Column(
-                                              children: [
-                                                Padding(
-                                                    padding: EdgeInsets.only(
-                                                        right: 130,
-                                                        bottom: 20)),
-                                                Text(
-                                                  '8888',
-                                                  style: TextStyle(
-                                                    color: Colors.black,
-                                                    fontSize: 17,
-                                                  ),
-                                                ),
-                                              ],
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                  Row(
-                                    children: [
-                                      Container(
-                                        child: Row(
-                                          children: [
-                                            Column(
-                                              children: [
-                                                Padding(
-                                                    padding: EdgeInsets.only(
-                                                        right: 160,
-                                                        bottom: 20)),
-                                                Text('3',
-                                                    style: TextStyle(
-                                                        color: Color.fromARGB(
-                                                            255, 190, 123, 22),
-                                                        fontSize: 17,
-                                                        fontWeight:
-                                                            FontWeight.bold)),
-                                              ],
-                                            ),
-                                            Column(
-                                              children: [
-                                                Padding(
-                                                    padding: EdgeInsets.only(
-                                                        right: 180,
                                                         bottom: 20)),
                                                 Text('Lê B D',
                                                     style: TextStyle(
@@ -1069,7 +845,7 @@ class _bangXepHangState extends State<bangXepHangStateLess>
                                               bottom: BorderSide(width: 1)),
                                         ),
                                         height: 60,
-                                        width: 500,
+                                        width: 480,
                                         child: Row(
                                           children: [
                                             Column(
@@ -1088,7 +864,7 @@ class _bangXepHangState extends State<bangXepHangStateLess>
                                               children: [
                                                 Padding(
                                                     padding: EdgeInsets.only(
-                                                        right: 180,
+                                                        right: 130,
                                                         bottom: 20)),
                                                 Text('Tên',
                                                     style: TextStyle(
@@ -1100,7 +876,7 @@ class _bangXepHangState extends State<bangXepHangStateLess>
                                               children: [
                                                 Padding(
                                                     padding: EdgeInsets.only(
-                                                        right: 140,
+                                                        right: 130,
                                                         bottom: 20)),
                                                 Text('Điểm',
                                                     style: TextStyle(
@@ -1136,7 +912,7 @@ class _bangXepHangState extends State<bangXepHangStateLess>
                                               children: [
                                                 Padding(
                                                     padding: EdgeInsets.only(
-                                                        right: 180,
+                                                        right: 130,
                                                         bottom: 15)),
                                                 Text('Nguyễn Văn A',
                                                     style: TextStyle(
@@ -1185,7 +961,7 @@ class _bangXepHangState extends State<bangXepHangStateLess>
                                               children: [
                                                 Padding(
                                                     padding: EdgeInsets.only(
-                                                        right: 180,
+                                                        right: 130,
                                                         bottom: 20)),
                                                 Text('Trần Thị B',
                                                     style: TextStyle(
@@ -1237,7 +1013,7 @@ class _bangXepHangState extends State<bangXepHangStateLess>
                                               children: [
                                                 Padding(
                                                     padding: EdgeInsets.only(
-                                                        right: 180,
+                                                        right: 130,
                                                         bottom: 20)),
                                                 Text('Lê B D',
                                                     style: TextStyle(
@@ -1279,7 +1055,7 @@ class _bangXepHangState extends State<bangXepHangStateLess>
                                               bottom: BorderSide(width: 1)),
                                         ),
                                         height: 60,
-                                        width: 500,
+                                        width: 480,
                                         child: Row(
                                           children: [
                                             Column(
@@ -1298,7 +1074,7 @@ class _bangXepHangState extends State<bangXepHangStateLess>
                                               children: [
                                                 Padding(
                                                     padding: EdgeInsets.only(
-                                                        right: 180,
+                                                        right: 130,
                                                         bottom: 20)),
                                                 Text('Tên',
                                                     style: TextStyle(
@@ -1310,7 +1086,7 @@ class _bangXepHangState extends State<bangXepHangStateLess>
                                               children: [
                                                 Padding(
                                                     padding: EdgeInsets.only(
-                                                        right: 140,
+                                                        right: 130,
                                                         bottom: 20)),
                                                 Text('Điểm',
                                                     style: TextStyle(
@@ -1346,7 +1122,7 @@ class _bangXepHangState extends State<bangXepHangStateLess>
                                               children: [
                                                 Padding(
                                                     padding: EdgeInsets.only(
-                                                        right: 180,
+                                                        right: 130,
                                                         bottom: 15)),
                                                 Text('Nguyễn Văn A',
                                                     style: TextStyle(
@@ -1395,7 +1171,7 @@ class _bangXepHangState extends State<bangXepHangStateLess>
                                               children: [
                                                 Padding(
                                                     padding: EdgeInsets.only(
-                                                        right: 180,
+                                                        right: 130,
                                                         bottom: 20)),
                                                 Text('Trần Thị B',
                                                     style: TextStyle(
@@ -1447,7 +1223,7 @@ class _bangXepHangState extends State<bangXepHangStateLess>
                                               children: [
                                                 Padding(
                                                     padding: EdgeInsets.only(
-                                                        right: 180,
+                                                        right: 130,
                                                         bottom: 20)),
                                                 Text('Lê B D',
                                                     style: TextStyle(
@@ -1489,7 +1265,7 @@ class _bangXepHangState extends State<bangXepHangStateLess>
                                               bottom: BorderSide(width: 1)),
                                         ),
                                         height: 60,
-                                        width: 500,
+                                        width: 480,
                                         child: Row(
                                           children: [
                                             Column(
@@ -1508,7 +1284,7 @@ class _bangXepHangState extends State<bangXepHangStateLess>
                                               children: [
                                                 Padding(
                                                     padding: EdgeInsets.only(
-                                                        right: 180,
+                                                        right: 130,
                                                         bottom: 20)),
                                                 Text('Tên',
                                                     style: TextStyle(
@@ -1520,7 +1296,7 @@ class _bangXepHangState extends State<bangXepHangStateLess>
                                               children: [
                                                 Padding(
                                                     padding: EdgeInsets.only(
-                                                        right: 140,
+                                                        right: 130,
                                                         bottom: 20)),
                                                 Text('Điểm',
                                                     style: TextStyle(
@@ -1556,7 +1332,7 @@ class _bangXepHangState extends State<bangXepHangStateLess>
                                               children: [
                                                 Padding(
                                                     padding: EdgeInsets.only(
-                                                        right: 180,
+                                                        right: 130,
                                                         bottom: 15)),
                                                 Text('Nguyễn Văn A',
                                                     style: TextStyle(
@@ -1605,7 +1381,7 @@ class _bangXepHangState extends State<bangXepHangStateLess>
                                               children: [
                                                 Padding(
                                                     padding: EdgeInsets.only(
-                                                        right: 180,
+                                                        right: 130,
                                                         bottom: 20)),
                                                 Text('Trần Thị B',
                                                     style: TextStyle(
@@ -1657,7 +1433,217 @@ class _bangXepHangState extends State<bangXepHangStateLess>
                                               children: [
                                                 Padding(
                                                     padding: EdgeInsets.only(
-                                                        right: 180,
+                                                        right: 130,
+                                                        bottom: 20)),
+                                                Text('Lê B D',
+                                                    style: TextStyle(
+                                                        color: Colors.black,
+                                                        fontSize: 17))
+                                              ],
+                                            ),
+                                            Column(
+                                              children: [
+                                                Padding(
+                                                    padding: EdgeInsets.only(
+                                                        right: 130,
+                                                        bottom: 20)),
+                                                Text(
+                                                  '7777',
+                                                  style: TextStyle(
+                                                    color: Colors.black,
+                                                    fontSize: 17,
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ]),
+                              ),
+                              Container(
+                                child: Column(children: [
+                                  Padding(padding: EdgeInsets.all(3)),
+                                  Row(
+                                    children: [
+                                      Container(
+                                        decoration: BoxDecoration(
+                                          border: Border(
+                                              top: BorderSide(width: 1),
+                                              bottom: BorderSide(width: 1)),
+                                        ),
+                                        height: 60,
+                                        width: 480,
+                                        child: Row(
+                                          children: [
+                                            Column(
+                                              children: [
+                                                Padding(
+                                                    padding: EdgeInsets.only(
+                                                        right: 160,
+                                                        bottom: 20)),
+                                                Text('Thứ hạng',
+                                                    style: TextStyle(
+                                                        color: Colors.black,
+                                                        fontSize: 17)),
+                                              ],
+                                            ),
+                                            Column(
+                                              children: [
+                                                Padding(
+                                                    padding: EdgeInsets.only(
+                                                        right: 130,
+                                                        bottom: 20)),
+                                                Text('Tên',
+                                                    style: TextStyle(
+                                                        color: Colors.black,
+                                                        fontSize: 17))
+                                              ],
+                                            ),
+                                            Column(
+                                              children: [
+                                                Padding(
+                                                    padding: EdgeInsets.only(
+                                                        right: 130,
+                                                        bottom: 20)),
+                                                Text('Điểm',
+                                                    style: TextStyle(
+                                                        color: Colors.black,
+                                                        fontSize: 17))
+                                              ],
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                  Row(
+                                    children: [
+                                      Container(
+                                        child: Row(
+                                          children: [
+                                            Column(
+                                              children: [
+                                                Padding(
+                                                    padding: EdgeInsets.only(
+                                                        right: 160,
+                                                        bottom: 15)),
+                                                Text('1',
+                                                    style: TextStyle(
+                                                        color: Colors.amber,
+                                                        fontSize: 17,
+                                                        fontWeight:
+                                                            FontWeight.bold)),
+                                              ],
+                                            ),
+                                            Column(
+                                              children: [
+                                                Padding(
+                                                    padding: EdgeInsets.only(
+                                                        right: 130,
+                                                        bottom: 15)),
+                                                Text('Nguyễn Văn A',
+                                                    style: TextStyle(
+                                                        color: Colors.black,
+                                                        fontSize: 17))
+                                              ],
+                                            ),
+                                            Column(
+                                              children: [
+                                                Padding(
+                                                    padding: EdgeInsets.only(
+                                                        right: 130,
+                                                        bottom: 15)),
+                                                Text('9999',
+                                                    style: TextStyle(
+                                                      color: Colors.black,
+                                                      fontSize: 17,
+                                                    ))
+                                              ],
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                  Row(
+                                    children: [
+                                      Container(
+                                        child: Row(
+                                          children: [
+                                            Column(
+                                              children: [
+                                                Padding(
+                                                    padding: EdgeInsets.only(
+                                                        right: 160,
+                                                        bottom: 20)),
+                                                Text('2',
+                                                    style: TextStyle(
+                                                        color: Colors.grey,
+                                                        fontSize: 17,
+                                                        fontWeight:
+                                                            FontWeight.bold)),
+                                              ],
+                                            ),
+                                            Column(
+                                              children: [
+                                                Padding(
+                                                    padding: EdgeInsets.only(
+                                                        right: 130,
+                                                        bottom: 20)),
+                                                Text('Trần Thị B',
+                                                    style: TextStyle(
+                                                        color: Colors.black,
+                                                        fontSize: 17))
+                                              ],
+                                            ),
+                                            Column(
+                                              children: [
+                                                Padding(
+                                                    padding: EdgeInsets.only(
+                                                        right: 130,
+                                                        bottom: 20)),
+                                                Text(
+                                                  '8888',
+                                                  style: TextStyle(
+                                                    color: Colors.black,
+                                                    fontSize: 17,
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                  Row(
+                                    children: [
+                                      Container(
+                                        child: Row(
+                                          children: [
+                                            Column(
+                                              children: [
+                                                Padding(
+                                                    padding: EdgeInsets.only(
+                                                        right: 160,
+                                                        bottom: 20)),
+                                                Text('3',
+                                                    style: TextStyle(
+                                                        color: Color.fromARGB(
+                                                            255, 190, 123, 22),
+                                                        fontSize: 17,
+                                                        fontWeight:
+                                                            FontWeight.bold)),
+                                              ],
+                                            ),
+                                            Column(
+                                              children: [
+                                                Padding(
+                                                    padding: EdgeInsets.only(
+                                                        right: 130,
                                                         bottom: 20)),
                                                 Text('Lê B D',
                                                     style: TextStyle(
@@ -1703,7 +1689,7 @@ class _bangXepHangState extends State<bangXepHangStateLess>
                         children: [
                           Container(
                             height: 60,
-                            width: 500,
+                            width: 480,
                             decoration: BoxDecoration(
                               border: Border(
                                   top: BorderSide(width: 1),
@@ -1725,7 +1711,7 @@ class _bangXepHangState extends State<bangXepHangStateLess>
                                   children: [
                                     Padding(
                                         padding: EdgeInsets.only(
-                                            right: 180, bottom: 20)),
+                                            right: 130, bottom: 20)),
                                     Text('Tên',
                                         style: TextStyle(
                                             color: Colors.black, fontSize: 17))
@@ -1735,7 +1721,7 @@ class _bangXepHangState extends State<bangXepHangStateLess>
                                   children: [
                                     Padding(
                                         padding: EdgeInsets.only(
-                                            right: 140, bottom: 20)),
+                                            right: 130, bottom: 20)),
                                     Text('Điểm',
                                         style: TextStyle(
                                             color: Colors.black, fontSize: 17))
@@ -1767,7 +1753,7 @@ class _bangXepHangState extends State<bangXepHangStateLess>
                                   children: [
                                     Padding(
                                         padding: EdgeInsets.only(
-                                            right: 180, bottom: 15)),
+                                            right: 130, bottom: 15)),
                                     Text('Nguyễn Văn A',
                                         style: TextStyle(
                                             color: Colors.black, fontSize: 17))
@@ -1811,7 +1797,7 @@ class _bangXepHangState extends State<bangXepHangStateLess>
                                   children: [
                                     Padding(
                                         padding: EdgeInsets.only(
-                                            right: 180, bottom: 20)),
+                                            right: 130, bottom: 20)),
                                     Text('Trần Thị B',
                                         style: TextStyle(
                                             color: Colors.black, fontSize: 17))
@@ -1858,7 +1844,7 @@ class _bangXepHangState extends State<bangXepHangStateLess>
                                   children: [
                                     Padding(
                                         padding: EdgeInsets.only(
-                                            right: 180, bottom: 20)),
+                                            right: 130, bottom: 20)),
                                     Text('Lê B D',
                                         style: TextStyle(
                                             color: Colors.black, fontSize: 17))

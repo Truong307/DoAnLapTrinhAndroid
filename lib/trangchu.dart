@@ -35,7 +35,7 @@ class TrangChu_State extends State<TrangChu> {
         title: Row(
           children: [
             CircleAvatar(
-              child: Image.asset("images/user.png"),
+              child: Image.asset("images/user1.png"),
             ),
             Expanded(
               flex: 1,

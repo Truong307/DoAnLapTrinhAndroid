@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 
 class banBe_Screen extends StatelessWidget {
@@ -9,21 +11,7 @@ class banBe_Screen extends StatelessWidget {
         appBar: AppBar(
           title: Row(
             children: [
-              Row(
-                children: [
-                  Container(
-                    child: IconButton(
-                      splashRadius: 24,
-                      tooltip: 'Trở về',
-                      onPressed: () {},
-                      //========================//
-                      icon: Image.asset('images/undo.png'),
-                      iconSize: 40,
-                    ),
-                  ),
-                ],
-              ),
-              Padding(padding: EdgeInsets.all(70)),
+              Padding(padding: EdgeInsets.all(80)),
               Text(
                 'BẠN BÈ',
                 style: TextStyle(
@@ -64,9 +52,9 @@ class banBe_Screen extends StatelessWidget {
                       ]),
                     ],
                     labelStyle:
-                        TextStyle(fontWeight: FontWeight.bold, fontSize: 22),
+                        TextStyle(fontWeight: FontWeight.bold, fontSize: 17),
                     unselectedLabelStyle:
-                        TextStyle(fontStyle: FontStyle.normal, fontSize: 18),
+                        TextStyle(fontStyle: FontStyle.normal, fontSize: 15),
                     indicatorColor: Colors.deepPurple,
                   ),
                 ),
@@ -83,7 +71,7 @@ class banBe_Screen extends StatelessWidget {
                             Container(
                               color: Colors.blue,
                               height: 40,
-                              width: 500,
+                              width: 432,
                               child: Row(
                                 children: [
                                   Column(
@@ -101,7 +89,7 @@ class banBe_Screen extends StatelessWidget {
                                     children: [
                                       Padding(
                                           padding: EdgeInsets.only(
-                                              right: 180, bottom: 10)),
+                                              right: 140, bottom: 10)),
                                       Text('Trạng thái',
                                           style: TextStyle(
                                               color: Colors.white,
@@ -134,7 +122,7 @@ class banBe_Screen extends StatelessWidget {
                                     children: [
                                       Padding(
                                           padding: EdgeInsets.only(
-                                              right: 180, bottom: 15)),
+                                              right: 140, bottom: 15)),
                                       Text('online',
                                           style: TextStyle(
                                               color: Colors.green,
@@ -145,7 +133,7 @@ class banBe_Screen extends StatelessWidget {
                                     children: [
                                       Padding(
                                           padding: EdgeInsets.only(
-                                              right: 130, bottom: 15)),
+                                              right: 110, bottom: 15)),
                                       Text('Xem thông tin chi tiết',
                                           style: TextStyle(
                                               color: Colors.blue,
@@ -180,7 +168,7 @@ class banBe_Screen extends StatelessWidget {
                                     children: [
                                       Padding(
                                           padding: EdgeInsets.only(
-                                              right: 180, bottom: 20)),
+                                              right: 140, bottom: 20)),
                                       Text('offline',
                                           style: TextStyle(
                                               color: Colors.red, fontSize: 17))
@@ -190,7 +178,7 @@ class banBe_Screen extends StatelessWidget {
                                     children: [
                                       Padding(
                                           padding: EdgeInsets.only(
-                                              right: 130, bottom: 20)),
+                                              right: 110, bottom: 20)),
                                       Text('Xem thông tin chi tiết',
                                           style: TextStyle(
                                               color: Colors.blue,
@@ -232,7 +220,7 @@ class banBe_Screen extends StatelessWidget {
                                     children: [
                                       Padding(
                                           padding: EdgeInsets.only(
-                                              right: 180, bottom: 15)),
+                                              right: 150, bottom: 15)),
                                       Text('online',
                                           style: TextStyle(
                                               color: Colors.green,
@@ -277,7 +265,7 @@ class banBe_Screen extends StatelessWidget {
                                     children: [
                                       Padding(
                                           padding: EdgeInsets.only(
-                                              right: 180, bottom: 20)),
+                                              right: 150, bottom: 20)),
                                       Text('online',
                                           style: TextStyle(
                                               color: Colors.green,
@@ -322,7 +310,7 @@ class banBe_Screen extends StatelessWidget {
                                     children: [
                                       Padding(
                                           padding: EdgeInsets.only(
-                                              right: 180, bottom: 20)),
+                                              right: 150, bottom: 20)),
                                       Text('online',
                                           style: TextStyle(
                                               color: Colors.green,
@@ -364,11 +352,11 @@ class banBe_Screen extends StatelessWidget {
                           ),
                         ),
                         Container(
-                          width: 470,
-                          height: 500,
+                          width: 400,
+                          height: 600,
                           decoration: BoxDecoration(
                             border: Border.all(
-                              width: 0,
+                              width: 1,
                               color: Colors.black,
                             ),
                             borderRadius: BorderRadius.all(Radius.circular(6)),
