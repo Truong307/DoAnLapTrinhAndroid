@@ -23,7 +23,7 @@ class _bangXepHangState extends State<bangXepHangStateLess>
       appBar: AppBar(
         title: Row(
           children: [
-            Padding(padding: EdgeInsets.all(50)),
+            Padding(padding: EdgeInsets.all(30)),
             Text(
               'BẢNG XẾP HẠNG',
               style: TextStyle(
@@ -75,7 +75,7 @@ class _bangXepHangState extends State<bangXepHangStateLess>
                           children: [
                             Container(
                               height: 60,
-                              width: 480,
+                              width: 432,
                               decoration: BoxDecoration(
                                 border: Border(
                                     top: BorderSide(width: 1),
@@ -420,7 +420,7 @@ class _bangXepHangState extends State<bangXepHangStateLess>
                                     children: [
                                       Container(
                                         height: 60,
-                                        width: 480,
+                                        width: 432,
                                         decoration: BoxDecoration(
                                           border: Border(
                                               top: BorderSide(width: 1),
@@ -630,7 +630,7 @@ class _bangXepHangState extends State<bangXepHangStateLess>
                                     children: [
                                       Container(
                                         height: 60,
-                                        width: 480,
+                                        width: 432,
                                         decoration: BoxDecoration(
                                           border: Border(
                                               top: BorderSide(width: 1),
@@ -845,7 +845,7 @@ class _bangXepHangState extends State<bangXepHangStateLess>
                                               bottom: BorderSide(width: 1)),
                                         ),
                                         height: 60,
-                                        width: 480,
+                                        width: 432,
                                         child: Row(
                                           children: [
                                             Column(
@@ -1055,7 +1055,7 @@ class _bangXepHangState extends State<bangXepHangStateLess>
                                               bottom: BorderSide(width: 1)),
                                         ),
                                         height: 60,
-                                        width: 480,
+                                        width: 432,
                                         child: Row(
                                           children: [
                                             Column(
@@ -1265,7 +1265,7 @@ class _bangXepHangState extends State<bangXepHangStateLess>
                                               bottom: BorderSide(width: 1)),
                                         ),
                                         height: 60,
-                                        width: 480,
+                                        width: 432,
                                         child: Row(
                                           children: [
                                             Column(
@@ -1475,7 +1475,7 @@ class _bangXepHangState extends State<bangXepHangStateLess>
                                               bottom: BorderSide(width: 1)),
                                         ),
                                         height: 60,
-                                        width: 480,
+                                        width: 432,
                                         child: Row(
                                           children: [
                                             Column(
@@ -1689,7 +1689,7 @@ class _bangXepHangState extends State<bangXepHangStateLess>
                         children: [
                           Container(
                             height: 60,
-                            width: 480,
+                            width: 432,
                             decoration: BoxDecoration(
                               border: Border(
                                   top: BorderSide(width: 1),

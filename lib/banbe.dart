@@ -1,5 +1,6 @@
 import 'dart:math';
 
+import 'package:doan_android/guithachdau.dart';
 import 'package:flutter/material.dart';
 
 class banBe_Screen extends StatelessWidget {
@@ -233,7 +234,13 @@ class banBe_Screen extends StatelessWidget {
                                         padding:
                                             EdgeInsets.only(left: 15, top: 20),
                                         child: ElevatedButton(
-                                          onPressed: () {},
+                                          onPressed: () {
+                                            Navigator.push(
+                                                context,
+                                                MaterialPageRoute(
+                                                    builder: (context) =>
+                                                        GuiThachDau()));
+                                          },
                                           child: const Text('Thách đấu'),
                                         ),
                                       ),
@@ -278,7 +285,13 @@ class banBe_Screen extends StatelessWidget {
                                         padding:
                                             EdgeInsets.only(left: 15, top: 20),
                                         child: ElevatedButton(
-                                          onPressed: () {},
+                                          onPressed: () {
+                                            Navigator.push(
+                                                context,
+                                                MaterialPageRoute(
+                                                    builder: (context) =>
+                                                        GuiThachDau()));
+                                          },
                                           child: const Text('Thách đấu'),
                                         ),
                                       ),
@@ -323,7 +336,13 @@ class banBe_Screen extends StatelessWidget {
                                         padding:
                                             EdgeInsets.only(left: 15, top: 20),
                                         child: ElevatedButton(
-                                          onPressed: () {},
+                                          onPressed: () {
+                                            Navigator.push(
+                                                context,
+                                                MaterialPageRoute(
+                                                    builder: (context) =>
+                                                        GuiThachDau()));
+                                          },
                                           child: const Text('Thách đấu'),
                                         ),
                                       ),
@@ -353,7 +372,7 @@ class banBe_Screen extends StatelessWidget {
                         ),
                         Container(
                           width: 400,
-                          height: 600,
+                          height: 380,
                           decoration: BoxDecoration(
                             border: Border.all(
                               width: 1,

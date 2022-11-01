@@ -8,7 +8,7 @@ import 'package:doan_android/ket_qua_thach_dau.dart';
 import 'package:doan_android/man_hinh_choi.dart';
 import 'package:doan_android/nhap_ma_xac_nhan.dart';
 import 'package:doan_android/quen_mat_khau.dart';
-import 'package:doan_android/test.dart';
+import 'package:doan_android/choithachdau.dart';
 import 'package:doan_android/trangchu.dart';
 import 'package:flutter/material.dart';
 

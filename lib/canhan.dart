@@ -1,3 +1,4 @@
+import 'package:doan_android/chinhsuahoso.dart';
 import 'package:doan_android/dang_nhap.dart';
 import 'package:doan_android/trangchu.dart';
 import 'package:flutter/material.dart';
@@ -5,23 +6,6 @@ import 'package:flutter/material.dart';
 class caNhan_Screen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    Widget backButton = Container(
-      child: Row(
-        children: [
-          Container(
-            margin: const EdgeInsets.all(10),
-            child: IconButton(
-              splashRadius: 24,
-              tooltip: 'Trở về',
-              onPressed: () {},
-              //========================//
-              icon: Image.asset('images/undo.png'),
-              iconSize: 40,
-            ),
-          ),
-        ],
-      ),
-    );
     Widget logOutButton = Container(
       child: ElevatedButton(
         onPressed: () {
@@ -163,7 +147,14 @@ class caNhan_Screen extends StatelessWidget {
         Column(
           children: [
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => chinhSuaHoSo(),
+                  ),
+                );
+              },
               child: Text(
                 'Chỉnh sửa hồ sơ',
                 style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
@@ -195,6 +186,7 @@ class caNhan_Screen extends StatelessWidget {
     );
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         elevation: 0,
         title: Row(
           mainAxisAlignment: MainAxisAlignment.end,

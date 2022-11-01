@@ -1,7 +1,7 @@
 import 'package:doan_android/man_hinh_choi.dart';
 import 'package:doan_android/nutchoingay.dart';
-import 'package:doan_android/test.dart';
 import 'package:doan_android/trangchu.dart';
+import 'package:doan_android/man_hinh_choi.dart';
 import 'package:flutter/material.dart';
 
 class ChoiNgay extends StatefulWidget {
@@ -379,7 +379,7 @@ class ChoiNgay_State extends State<ChoiNgay> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => BatDauScreen(),
+                    builder: (context) => ChoiCaNhan(),
                   ),
                 );
               }, //Chưa xử lý

@@ -1,3 +1,4 @@
+import 'package:doan_android/trangchu.dart';
 import 'package:flutter/material.dart';
 
 class change_password extends StatelessWidget{
@@ -21,10 +22,10 @@ class change_password extends StatelessWidget{
             ),
           ),
           Column(
-            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
-                padding: EdgeInsets.only(right: 380),
+                padding: EdgeInsets.only(left: 15),
                 child: Text("Mật Khẩu:",
                 style: TextStyle(
                   fontSize: 18,
@@ -46,10 +47,10 @@ class change_password extends StatelessWidget{
             ],
           ),
           Column(
-            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
-                padding: EdgeInsets.only(right: 300),
+                padding: EdgeInsets.only(left: 15),
                 child: Text("Xác nhận mật khẩu:",
                 style: TextStyle(
                   fontSize: 18,
@@ -76,7 +77,9 @@ class change_password extends StatelessWidget{
                 //padding: const EdgeInsets.all(20),
                 minimumSize: Size(100, 50),
               ),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => TrangChu()));
+              },
               child: const Text('Xác nhận',
               style: TextStyle(
                   fontSize: 20,

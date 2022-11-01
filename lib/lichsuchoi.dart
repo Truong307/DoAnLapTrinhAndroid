@@ -42,7 +42,7 @@ class LichSuChoi_State extends State<LichSuChoi_Home> {
           Container(
             margin: EdgeInsets.only(left: 80),
             child: const Text(
-              "Thông báo",
+              "LỊCH SỬ CHƠI",
               style: TextStyle(
                 color: Colors.black,
                 fontSize: 26,

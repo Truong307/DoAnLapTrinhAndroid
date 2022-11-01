@@ -70,6 +70,7 @@ class Register extends StatelessWidget {
               Container(
                 padding: const EdgeInsets.all(15),
                 child: const TextField(
+                  obscureText: true,
                   keyboardType: TextInputType.phone,
                   decoration: InputDecoration(
                     //labelText: 'Mật khẩu',
@@ -99,6 +100,7 @@ class Register extends StatelessWidget {
               Container(
                 padding: const EdgeInsets.all(15),
                 child: const TextField(
+                  obscureText: true,
                   decoration: InputDecoration(
                     //labelText: 'Xác nhận mật khẩu',
                     border: OutlineInputBorder(),
@@ -127,7 +129,7 @@ class Register extends StatelessWidget {
               Container(
                 padding: const EdgeInsets.all(15),
                 child: const TextField(
-                  obscureText: true,
+                  
                   decoration: InputDecoration(
                     //labelText: 'Số điện thoại',
                     border: OutlineInputBorder(),

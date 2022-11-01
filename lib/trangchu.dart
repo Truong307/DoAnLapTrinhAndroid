@@ -2,6 +2,7 @@ import 'dart:ui';
 import 'package:doan_android/banbe.dart';
 import 'package:doan_android/bangxephang.dart';
 import 'package:doan_android/canhan.dart';
+import 'package:doan_android/lichsuchoi.dart';
 import 'package:doan_android/nutchoingay.dart';
 import 'package:doan_android/thongbao.dart';
 import 'package:doan_android/tintuc.dart';
@@ -81,13 +82,9 @@ class TrangChu_State extends State<TrangChu> {
               ),
               iconSize: 30,
               onPressed: () {
-                /*Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => ThongBao_App(),
-                  ),
-                );*/
-              }, // Chưa xử lý
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => LichSuChoi_App()));
+              },
             ),
           ],
         ),
@@ -99,7 +96,7 @@ class TrangChu_State extends State<TrangChu> {
           ),
         ),
         child: BottomNavigationBar(
-          selectedItemColor: Colors.blueAccent,
+          selectedItemColor: Colors.blue,
           backgroundColor: Colors.amber,
           unselectedItemColor: Colors.grey,
           currentIndex: _selectedIndex,

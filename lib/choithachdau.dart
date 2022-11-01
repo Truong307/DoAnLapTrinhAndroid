@@ -2,10 +2,9 @@ import 'package:doan_android/choingay.dart';
 import 'package:doan_android/dang_nhap.dart';
 import 'package:doan_android/guithachdau.dart';
 import 'package:doan_android/ket_qua_thach_dau.dart';
-import 'package:doan_android/ketqua.dart';
 import 'package:flutter/material.dart';
 
-class ChoiCaNhan extends StatelessWidget {
+class BatDauScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 //=======================================================//
@@ -19,13 +18,16 @@ class ChoiCaNhan extends StatelessWidget {
               //Xử trở về trang chủ
               onPressed: () {
                 Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => ChoiNgay()));
+                    MaterialPageRoute(builder: (context) => GuiThachDau()));
               },
               //========================//
               icon: Image.asset('images/undo.png'),
               iconSize: 40,
             ),
           ),
+          Container(
+            padding: EdgeInsets.all(50),
+            child: Text('NguoiChoi vs Lelouch', style: TextStyle(color: Colors.deepOrange),),)
         ],
       ),
     );
@@ -180,10 +182,8 @@ class ChoiCaNhan extends StatelessWidget {
                     minimumSize: Size(150, 70),
                   ),
                   onPressed: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => ketQua_Screen()));
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => resultScreenApp()));
                   }, // Chưa xử lý
                   child: Text(
                     'A. -1',
@@ -209,7 +209,7 @@ class ChoiCaNhan extends StatelessWidget {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => ketQua_Screen()));
+                            builder: (context) => resultScreenApp()));
                   }, // Chưa xử lý
                   child: Text(
                     'B. 0',
@@ -244,7 +244,7 @@ class ChoiCaNhan extends StatelessWidget {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => ketQua_Screen()));
+                            builder: (context) => resultScreenApp()));
                   }, // Chưa xử lý
                   child: Text(
                     'C. 2002',
@@ -273,7 +273,7 @@ class ChoiCaNhan extends StatelessWidget {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => ketQua_Screen()));
+                            builder: (context) => resultScreenApp()));
                   }, // Chưa xử lý
                   child: Text(
                     'D. 2',

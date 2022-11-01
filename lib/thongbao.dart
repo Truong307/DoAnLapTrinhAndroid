@@ -1,3 +1,5 @@
+import 'package:doan_android/banbe.dart';
+import 'package:doan_android/choithachdau.dart';
 import 'package:doan_android/trangchu.dart';
 import 'package:flutter/material.dart';
 
@@ -122,7 +124,7 @@ class ThongBao_State extends State<ThongBao_Home> {
             ),
             child: ListTile(
               title: const Text(
-                'User đã gửi lời mời kết bạn',
+                'User đã gửi Yêu cầu thách đấu',
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 15,
@@ -139,7 +141,12 @@ class ThongBao_State extends State<ThongBao_Home> {
                 children: [
                   Container(
                     child: TextButton(
-                      onPressed: () {}, // Chưa xử lý
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => BatDauScreen()));
+                      }, // Chưa xử lý
                       child: Text(
                         'Chấp nhận',
                         style: TextStyle(
@@ -210,7 +217,8 @@ class ThongBao_State extends State<ThongBao_Home> {
                 children: [
                   Container(
                     child: TextButton(
-                      onPressed: () {}, // Chưa xử lý
+                      onPressed: () {
+                      }, // Chưa xử lý
                       child: const Text(
                         'Chấp nhận',
                         style: TextStyle(

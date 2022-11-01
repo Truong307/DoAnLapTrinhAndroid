@@ -1,4 +1,6 @@
 import 'package:doan_android/chi_tiet_thach_dau.dart';
+import 'package:doan_android/guithachdau.dart';
+import 'package:doan_android/trangchu.dart';
 import 'package:flutter/material.dart';
 
 class resultScreenApp extends StatelessWidget {
@@ -170,7 +172,10 @@ class resultScreenApp extends StatelessWidget {
                 borderRadius: BorderRadius.circular(10),
               ),
             ),
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => GuiThachDau()));
+            },
             child: const Text(
               'Đấu lại',
               style: TextStyle(
@@ -190,7 +195,10 @@ class resultScreenApp extends StatelessWidget {
                 borderRadius: BorderRadius.circular(10),
               ),
             ),
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => TrangChu()));
+            },
             child: const Text(
               'Trang chủ',
               style: TextStyle(
