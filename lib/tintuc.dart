@@ -89,7 +89,7 @@ class TinTuc_State extends State<TinTuc_Home> {
                 'Robot hình người của Tesla ...',
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
-                  fontSize: 10,
+                  fontSize: 15,
                 ),
               ),
               trailing: TextButton(
@@ -115,7 +115,7 @@ class TinTuc_State extends State<TinTuc_Home> {
                 'Chào mừng đến với bình nguyên vô tận...',
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
-                  fontSize: 10,
+                  fontSize: 15,
                 ),
               ),
               trailing: TextButton(
@@ -140,7 +140,7 @@ class TinTuc_State extends State<TinTuc_Home> {
                 'Khám phá tính năng của Iphone 14 và...',
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
-                  fontSize: 10,
+                  fontSize: 15,
                 ),
               ),
               trailing: TextButton(
@@ -164,7 +164,7 @@ class TinTuc_State extends State<TinTuc_Home> {
         child: Container(
           child: Column(
             children: [
-              backButton,
+              //backButton,
               textSection,
               contentSection,
             ],

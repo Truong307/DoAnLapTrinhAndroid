@@ -1,14 +1,14 @@
 import 'package:doan_android/chi_tiet_thach_dau.dart';
 import 'package:flutter/material.dart';
 
-class resultScreenApp extends StatelessWidget{
-  String avt1='avt1.png';
-  String avt2='avt2.png';
-  String Core1='380';
-  String Core2='120';
-  String Name='Admin';
-  String imgCupWin='win.png';
-  String imgCupLose='lose.png';
+class resultScreenApp extends StatelessWidget {
+  String avt1 = 'user1.png';
+  String avt2 = 'user2.png';
+  String Core1 = '380';
+  String Core2 = '120';
+  String Name = 'Admin';
+  String imgCupWin = 'win.png';
+  String imgCupLose = 'lose.png';
   @override
   Widget build(BuildContext context) {
     Widget _TitleSection = Container(
@@ -19,24 +19,24 @@ class resultScreenApp extends StatelessWidget{
           fontSize: 20,
           fontWeight: FontWeight.bold,
         ),
-        ),
+      ),
     );
     Widget imgavt1Section = Container(
       //padding: const EdgeInsets.only(right: 0),
       //color: Colors.yellow,
       child: Image.asset(
         'images/$avt1',
-         width: 70,
-         height: 70,
-    ),
+        width: 70,
+        height: 70,
+      ),
     );
     Widget imgavt2Section = Container(
       //padding: EdgeInsets.only(left: 0),
       child: Image.asset(
         'images/$avt2',
-         width: 70,
-         height: 70,
-    ),
+        width: 70,
+        height: 70,
+      ),
     );
     Widget _CoreSection = Container(
       padding: const EdgeInsets.all(40),
@@ -45,11 +45,11 @@ class resultScreenApp extends StatelessWidget{
         style: TextStyle(
           fontWeight: FontWeight.bold,
         ),
-        ),
+      ),
     );
     Widget _ResultSection = Container(
       //color: Colors.red,
-      padding: EdgeInsets.only(left: 50,right: 50,top: 30),
+      padding: EdgeInsets.only(left: 50, right: 50, top: 30),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -69,15 +69,15 @@ class resultScreenApp extends StatelessWidget{
             //color: Colors.red,
             //padding: EdgeInsets.only(left: 50),
             height: 50,
-            width:70,
+            width: 70,
             child: Center(
               child: Text(
-              'Trường',
-              style: const TextStyle(
-                overflow: TextOverflow.visible,
-                fontSize: 17,
-                fontWeight: FontWeight.bold,
-              ),
+                'Trường',
+                style: const TextStyle(
+                  overflow: TextOverflow.visible,
+                  fontSize: 17,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
             ),
           ),
@@ -90,17 +90,18 @@ class resultScreenApp extends StatelessWidget{
                 side: BorderSide(
                   width: 3,
                   color: Colors.black,
-                  ),
-                   shape: RoundedRectangleBorder(
-               borderRadius: BorderRadius.circular(30),
-             ),
+                ),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(30),
+                ),
               ),
               onPressed: () {
                 Navigator.push(context,
                     MaterialPageRoute(builder: (context) => ChiTietThachDau()));
               },
-              child: const Text('Xem chi tiết',
-              style: TextStyle(
+              child: const Text(
+                'Xem chi tiết',
+                style: TextStyle(
                   fontSize: 20,
                 ),
               ),
@@ -113,12 +114,12 @@ class resultScreenApp extends StatelessWidget{
             width: 70,
             child: Center(
               child: Text(
-              'Sơn',
-              style: const TextStyle(
-                overflow: TextOverflow.visible,
-                fontSize: 17,
-                fontWeight: FontWeight.bold,
-              ),
+                'Sơn',
+                style: const TextStyle(
+                  overflow: TextOverflow.visible,
+                  fontSize: 17,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
             ),
           ),
@@ -134,17 +135,17 @@ class resultScreenApp extends StatelessWidget{
               children: [
                 Container(
                   child: Image.asset(
-            'images/YOUWIN.png',
-             width: 150,
-             height: 150,
-           ),
+                    'images/youwin.png',
+                    width: 150,
+                    height: 150,
+                  ),
                 ),
                 Container(
                   child: Image.asset(
-            'images/$imgCupWin',
-             width: 300,
-             height: 300,
-           ),
+                    'images/$imgCupWin',
+                    width: 300,
+                    height: 300,
+                  ),
                 ),
               ],
             ),
@@ -158,43 +159,45 @@ class resultScreenApp extends StatelessWidget{
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                //padding: const EdgeInsets.all(20),
-                minimumSize: Size(180, 70),
-                // side: BorderSide(
-                //   width: 3,
-                //   color: Colors.black,
-                //   ),
-                   shape: RoundedRectangleBorder(
-               borderRadius: BorderRadius.circular(10),
-             ),
-              ),
-              onPressed: () {},
-              child: const Text('Đấu lại',
-              style: TextStyle(
-                  fontSize: 20,
-                ),
+            style: ElevatedButton.styleFrom(
+              //padding: const EdgeInsets.all(20),
+              minimumSize: Size(180, 70),
+              // side: BorderSide(
+              //   width: 3,
+              //   color: Colors.black,
+              //   ),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10),
               ),
             ),
-            ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                //padding: const EdgeInsets.all(20),
-                minimumSize: Size(180, 70),
-                // side: BorderSide(
-                //   width: 3,
-                //   color: Colors.black,
-                //   ),
-                   shape: RoundedRectangleBorder(
-               borderRadius: BorderRadius.circular(10),
-             ),
-              ),
-              onPressed: () {},
-              child: const Text('Trang chủ',
+            onPressed: () {},
+            child: const Text(
+              'Đấu lại',
               style: TextStyle(
-                  fontSize: 20,
-                ),
+                fontSize: 20,
               ),
             ),
+          ),
+          ElevatedButton(
+            style: ElevatedButton.styleFrom(
+              //padding: const EdgeInsets.all(20),
+              minimumSize: Size(180, 70),
+              // side: BorderSide(
+              //   width: 3,
+              //   color: Colors.black,
+              //   ),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10),
+              ),
+            ),
+            onPressed: () {},
+            child: const Text(
+              'Trang chủ',
+              style: TextStyle(
+                fontSize: 20,
+              ),
+            ),
+          ),
         ],
       ),
     );
