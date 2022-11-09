@@ -26,6 +26,26 @@ class ChoiCaNhan extends StatelessWidget {
               iconSize: 40,
             ),
           ),
+          Padding(padding: EdgeInsets.all(95)),
+          Column( 
+            children: [
+              Container(
+                margin: EdgeInsets.only(left: 10),
+                child: Text(
+                  'truong307',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black,
+                  ),
+                ),
+              ),
+            ],
+          ),
+          Padding(padding: EdgeInsets.all(5)),
+          CircleAvatar(
+            child: Image.asset("images/user1.png"),
+          ),
+          
         ],
       ),
     );
@@ -167,7 +187,7 @@ class ChoiCaNhan extends StatelessWidget {
             children: [
               Container(
                 margin: EdgeInsets.only(
-                  right: 40,
+                  right: 10,
                 ),
                 decoration: BoxDecoration(
                   color: Colors.red,
@@ -177,7 +197,7 @@ class ChoiCaNhan extends StatelessWidget {
                 ),
                 child: TextButton(
                   style: TextButton.styleFrom(
-                    minimumSize: Size(150, 70),
+                    minimumSize: Size(200, 90),
                   ),
                   onPressed: () {
                     Navigator.push(
@@ -203,7 +223,7 @@ class ChoiCaNhan extends StatelessWidget {
                 ),
                 child: TextButton(
                   style: TextButton.styleFrom(
-                    minimumSize: Size(150, 70),
+                    minimumSize: Size(200, 90),
                   ),
                   onPressed: () {
                     Navigator.push(
@@ -228,7 +248,7 @@ class ChoiCaNhan extends StatelessWidget {
               Container(
                 margin: EdgeInsets.only(
                   top: 10,
-                  right: 40,
+                  right: 10,
                 ),
                 decoration: BoxDecoration(
                   color: Colors.blue,
@@ -238,7 +258,7 @@ class ChoiCaNhan extends StatelessWidget {
                 ),
                 child: TextButton(
                   style: TextButton.styleFrom(
-                    minimumSize: Size(150, 70),
+                    minimumSize: Size(200, 90),
                   ),
                   onPressed: () {
                     Navigator.push(
@@ -267,7 +287,7 @@ class ChoiCaNhan extends StatelessWidget {
                 ),
                 child: TextButton(
                   style: TextButton.styleFrom(
-                    minimumSize: Size(150, 70),
+                    minimumSize: Size(200, 90),
                   ),
                   onPressed: () {
                     Navigator.push(
@@ -294,7 +314,7 @@ class ChoiCaNhan extends StatelessWidget {
       appBar: AppBar(
         elevation: 0,
         automaticallyImplyLeading: false,
-        backgroundColor: Color.fromARGB(250, 250, 250, 250),
+        backgroundColor: Colors.white,
         title: backButton,
       ),
       body: Center(

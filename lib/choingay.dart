@@ -328,11 +328,11 @@ class ChoiNgay_State extends State<ChoiNgay> {
                                         padding: EdgeInsets.only(
                                           top: 9,
                                           bottom: 9,
-                                          left: 30,
-                                          right: 30,
+                                          left: 8,
+                                          right: 8,
                                         ),
                                         child: Text(
-                                          '...',
+                                          'Văn Học',
                                           style: TextStyle(
                                             fontSize: 15,
                                           ),

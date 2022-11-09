@@ -21,9 +21,10 @@ class _bangXepHangState extends State<bangXepHangStateLess>
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         title: Row(
           children: [
-            Padding(padding: EdgeInsets.all(30)),
+            Padding(padding: EdgeInsets.all(50)),
             Text(
               'BẢNG XẾP HẠNG',
               style: TextStyle(

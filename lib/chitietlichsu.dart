@@ -1,12 +1,33 @@
 import 'package:doan_android/choingay.dart';
+import 'package:doan_android/lichsuchoicanhan.dart';
 import 'package:doan_android/man_hinh_choi.dart';
 import 'package:doan_android/trangchu.dart';
 import 'package:doan_android/xemlaicauhoi.dart';
 import 'package:flutter/material.dart';
 
-class ketQua_Screen extends StatelessWidget {
+class chiTietLichSu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    Widget backButton = Container(
+      child: Row(
+        children: [
+          Container(
+            child: IconButton(
+              splashRadius: 24,
+              tooltip: 'Trở về',
+              //Xử trở về trang chủ
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => LichSuChoiCaNhan()));
+              },
+              //========================//
+              icon: Image.asset('images/undo.png'),
+              iconSize: 40,
+            ),
+          ),
+        ],
+      ),
+    );
     Widget noiDung = Column(
       children: [
         Padding(padding: EdgeInsets.all(20)),
@@ -114,58 +135,14 @@ class ketQua_Screen extends StatelessWidget {
         )
       ],
     );
-    Widget button = Container(
-      child: Row(
-        children: [
-          Padding(padding: EdgeInsets.only(left: 20, top: 150)),
-          Column(
-            children: [
-              ElevatedButton(
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => ChoiNgay()));
-                },
-                child: Text(
-                  'Tiếp tục',
-                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-                ),
-                style: ElevatedButton.styleFrom(
-                  minimumSize: Size(180, 70),
-                  side: BorderSide(),
-                ),
-              ),
-            ],
-          ),
-          Padding(padding: EdgeInsets.only(left: 35, top: 150)),
-          Column(
-            children: [
-              ElevatedButton(
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => TrangChu()));
-                },
-                child: Text(
-                  'Trang chủ',
-                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-                ),
-                style: ElevatedButton.styleFrom(
-                  minimumSize: Size(180, 70),
-                  side: BorderSide(),
-                ),
-              ),
-            ],
-          ),
-        ],
-      ),
-    );
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Kết quả',
       home: Scaffold(
         body: Column(
           children: [
+            backButton,
             noiDung,
-            button,
           ],
         ),
       ),

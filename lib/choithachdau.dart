@@ -169,7 +169,7 @@ class BatDauScreen extends StatelessWidget {
             children: [
               Container(
                 margin: EdgeInsets.only(
-                  right: 40,
+                  right: 10,
                 ),
                 decoration: BoxDecoration(
                   color: Colors.red,
@@ -179,7 +179,7 @@ class BatDauScreen extends StatelessWidget {
                 ),
                 child: TextButton(
                   style: TextButton.styleFrom(
-                    minimumSize: Size(150, 70),
+                    minimumSize: Size(200, 90),
                   ),
                   onPressed: () {
                     Navigator.push(context,
@@ -203,7 +203,7 @@ class BatDauScreen extends StatelessWidget {
                 ),
                 child: TextButton(
                   style: TextButton.styleFrom(
-                    minimumSize: Size(150, 70),
+                    minimumSize: Size(200, 90),
                   ),
                   onPressed: () {
                     Navigator.push(
@@ -228,7 +228,7 @@ class BatDauScreen extends StatelessWidget {
               Container(
                 margin: EdgeInsets.only(
                   top: 10,
-                  right: 40,
+                  right: 10,
                 ),
                 decoration: BoxDecoration(
                   color: Colors.blue,
@@ -238,7 +238,7 @@ class BatDauScreen extends StatelessWidget {
                 ),
                 child: TextButton(
                   style: TextButton.styleFrom(
-                    minimumSize: Size(150, 70),
+                    minimumSize: Size(200, 90),
                   ),
                   onPressed: () {
                     Navigator.push(
@@ -267,7 +267,7 @@ class BatDauScreen extends StatelessWidget {
                 ),
                 child: TextButton(
                   style: TextButton.styleFrom(
-                    minimumSize: Size(150, 70),
+                    minimumSize: Size(200, 90),
                   ),
                   onPressed: () {
                     Navigator.push(
@@ -294,7 +294,7 @@ class BatDauScreen extends StatelessWidget {
       appBar: AppBar(
         elevation: 0,
         automaticallyImplyLeading: false,
-        backgroundColor: Color.fromARGB(250, 250, 250, 250),
+        backgroundColor: Colors.white,
         title: backButton,
       ),
       body: Center(

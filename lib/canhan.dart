@@ -142,7 +142,7 @@ class caNhan_Screen extends StatelessWidget {
       ),
     );
     Widget bottomButton = Container(
-      padding: EdgeInsets.only(left: 20, top: 40),
+      padding: EdgeInsets.only(left: 120, top: 40),
       child: Row(children: [
         Column(
           children: [
@@ -161,23 +161,6 @@ class caNhan_Screen extends StatelessWidget {
               ),
               style: ElevatedButton.styleFrom(
                 minimumSize: Size(200, 50),
-              ),
-            )
-          ],
-        ),
-        Padding(
-          padding: EdgeInsets.only(right: 20),
-        ),
-        Column(
-          children: [
-            ElevatedButton(
-              onPressed: () {},
-              child: Text(
-                'Lưu',
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-              ),
-              style: ElevatedButton.styleFrom(
-                minimumSize: Size(100, 50),
               ),
             )
           ],

@@ -1,13 +1,14 @@
+import 'package:doan_android/chitietlichsu.dart';
+import 'package:doan_android/lichsuchoicanhan.dart';
 import 'package:doan_android/trangchu.dart';
 import 'package:flutter/material.dart';
 
-class LichSuChoi_App extends StatelessWidget {
+class LichSuChoiThachDau extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: "Thông Báo",
-      
       home: LichSuChoi_Home(),
     );
   }
@@ -75,7 +76,12 @@ class LichSuChoi_State extends State<LichSuChoi_Home> {
             margin: const EdgeInsets.all(10),
             child: ElevatedButton(
               style: raisedButtonStyle,
-              onPressed: () {}, // Chưa xử lý
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => LichSuChoiCaNhan()));
+              }, // Chưa xử lý
               child: const Text(
                 'Cá nhân',
                 style: TextStyle(
@@ -89,7 +95,12 @@ class LichSuChoi_State extends State<LichSuChoi_Home> {
           Container(
             child: ElevatedButton(
               style: raisedButtonStyle,
-              onPressed: () {}, // Chưa xử lý
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => LichSuChoiThachDau()));
+              }, // Chưa xử lý
               child: const Text(
                 'Thách đấu',
                 style: TextStyle(
@@ -121,24 +132,28 @@ class LichSuChoi_State extends State<LichSuChoi_Home> {
             ),
             child: ListTile(
               title: const Text(
-                'Lĩnh vực: Xã hội',
+                'Lelouch vs TrauNui',
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 15,
                 ),
               ),
               subtitle: const Text(
-                '15:00 29-10-2022',
-                style: TextStyle(
-                ),
+                '12:33 29-10-2022',
+                style: TextStyle(),
               ),
               trailing: Row(
                 mainAxisSize: MainAxisSize.min,
-                children: [ 
+                children: [
                   Container(
                     margin: const EdgeInsets.all(10),
                     child: TextButton(
-                      onPressed: () {}, // Chưa xử lý
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => chiTietLichSu()));
+                      }, // Chưa xử lý
                       child: const Text(
                         'Xem thêm',
                         style: TextStyle(
@@ -172,14 +187,14 @@ class LichSuChoi_State extends State<LichSuChoi_Home> {
             ),
             child: ListTile(
               title: const Text(
-                'Lĩnh vực: Địa lý',
+                'Lelouch vs User002',
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 15,
                 ),
               ),
               subtitle: const Text(
-                '20:33 4-11-2022',
+                '21:10 1-11-2022',
                 style: TextStyle(),
               ),
               trailing: Row(
@@ -188,7 +203,12 @@ class LichSuChoi_State extends State<LichSuChoi_Home> {
                   Container(
                     margin: const EdgeInsets.all(10),
                     child: TextButton(
-                      onPressed: () {}, // Chưa xử lý
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => chiTietLichSu()));
+                      }, // Chưa xử lý
                       child: const Text(
                         'Xem thêm',
                         style: TextStyle(
@@ -215,7 +235,7 @@ class LichSuChoi_State extends State<LichSuChoi_Home> {
         ],
       ),
     );
-    
+
 //======================================================//
     return Scaffold(
       appBar: AppBar(
@@ -241,3 +261,4 @@ class LichSuChoi_State extends State<LichSuChoi_Home> {
     );
   }
 }
+// TODO Implement this library.
