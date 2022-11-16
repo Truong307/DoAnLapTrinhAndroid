@@ -2,6 +2,7 @@ import 'package:doan_android/choingay.dart';
 import 'package:doan_android/dang_nhap.dart';
 import 'package:doan_android/guithachdau.dart';
 import 'package:doan_android/ket_qua_thach_dau.dart';
+import 'package:doan_android/trangchu.dart';
 import 'package:flutter/material.dart';
 
 class BatDauScreen extends StatelessWidget {
@@ -18,7 +19,7 @@ class BatDauScreen extends StatelessWidget {
               //Xử trở về trang chủ
               onPressed: () {
                 Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => GuiThachDau()));
+                    MaterialPageRoute(builder: (context) => TrangChu()));
               },
               //========================//
               icon: Image.asset('images/undo.png'),

@@ -1,5 +1,6 @@
 import 'package:doan_android/nutchoingay.dart';
 import 'package:doan_android/choithachdau.dart';
+import 'package:doan_android/phong_cho_thach_dau.dart';
 import 'package:doan_android/trangchu.dart';
 import 'package:flutter/material.dart';
 
@@ -377,7 +378,7 @@ class GuiThachDau_State extends State<GuiThachDau> {
               ),
               onPressed: () {
                 Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => BatDauScreen()));
+                    MaterialPageRoute(builder: (context) => phongChoThachDau()));
               }, //Chưa xử lý
               child: const Padding(
                 padding: EdgeInsets.only(

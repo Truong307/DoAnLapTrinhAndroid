@@ -71,6 +71,7 @@ flutter:
     - images/win.png
     - images/youlose.png
     - images/youwin.png
+    - images/logo_CKC_Quiz.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
