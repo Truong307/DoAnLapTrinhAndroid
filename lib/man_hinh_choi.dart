@@ -1,11 +1,81 @@
+import 'dart:async';
+
+import 'package:doan_android/cauhoi_object.dart';
 import 'package:doan_android/choingay.dart';
 import 'package:doan_android/dang_nhap.dart';
 import 'package:doan_android/guithachdau.dart';
 import 'package:doan_android/ket_qua_thach_dau.dart';
 import 'package:doan_android/ketqua.dart';
+import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 
-class ChoiCaNhan extends StatelessWidget {
+class ChoiCaNhan extends StatefulWidget {
+  @override
+  State<StatefulWidget> createState() {
+    return ChoiCaNhanState();
+  }
+}
+
+class ChoiCaNhanState extends State<ChoiCaNhan> {
+  DatabaseReference ref = FirebaseDatabase.instance.ref();
+
+  List<CauHoi> lsCauHoi = [];
+  int time = 30;
+  int i = 0;
+  int diem = 0;
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    // Truy xuất dữ liệu Câu Hỏi
+    retrieveCauHoiData();
+  }
+
+  void _tangI() {
+    setState(() {
+      i++;
+    });
+  }
+
+  void retrieveCauHoiData() {
+    ref.child("CauHoi").onChildAdded.listen((data) {
+      CauHoiObject cauHoiObject =
+          CauHoiObject.fromJson(data.snapshot.value as Map);
+      CauHoi cauHoi =
+          CauHoi(key: data.snapshot.key.hashCode, cauHoiObject: cauHoiObject);
+      lsCauHoi.add(cauHoi);
+      setState(() {});
+    });
+  }
+
+  void _thoiGianChoi() {
+    Timer.periodic(Duration(seconds: 1), (timer) {
+      if (time > 0) {
+        setState(() {
+          time--;
+        });
+      } else if (time == 30) {
+        setState(() {
+          time--;
+        });
+      } else {
+        timer.cancel();
+        setState(() {
+          i++;
+          time = 30;
+          _thoiGianChoi();
+        });
+      }
+    });
+  }
+
+  _hienCauHoi() {
+    if (lsCauHoi[i].cauHoiObject!.doKho.toString() == "Dễ") {
+      return 'Câu ${i + 1}: ${lsCauHoi[i].cauHoiObject!.tenCauHoi.toString()}';
+    }
+    return "Null";
+  }
+
   @override
   Widget build(BuildContext context) {
 //=======================================================//
@@ -27,7 +97,7 @@ class ChoiCaNhan extends StatelessWidget {
             ),
           ),
           Padding(padding: EdgeInsets.all(95)),
-          Column( 
+          Column(
             children: [
               Container(
                 margin: EdgeInsets.only(left: 10),
@@ -45,7 +115,6 @@ class ChoiCaNhan extends StatelessWidget {
           CircleAvatar(
             child: Image.asset("images/user1.png"),
           ),
-          
         ],
       ),
     );
@@ -53,7 +122,7 @@ class ChoiCaNhan extends StatelessWidget {
     Widget cauHoiSection = Container(
       padding: EdgeInsets.all(30),
       child: Text(
-        'Câu 1: Bạn hãy cho biết 1 + 1 = ?',
+        _hienCauHoi(),
         style: TextStyle(
           color: Color.fromARGB(250, 250, 250, 250),
           fontSize: 30,
@@ -96,7 +165,7 @@ class ChoiCaNhan extends StatelessWidget {
             ),
           ),
           child: Text(
-            '1000',
+            '$diem',
             style: TextStyle(
               fontSize: 25,
               fontWeight: FontWeight.bold,
@@ -118,7 +187,9 @@ class ChoiCaNhan extends StatelessWidget {
               shape: BoxShape.circle,
             ),
             child: TextButton(
-              onPressed: () {},
+              onPressed: () {
+                _thoiGianChoi();
+              },
               child: Text(
                 '50:50',
                 style: TextStyle(
@@ -168,7 +239,7 @@ class ChoiCaNhan extends StatelessWidget {
               top: 10,
             ),
             child: Text(
-              '30',
+              time.toString(),
               style: TextStyle(
                 fontSize: 30,
                 fontWeight: FontWeight.bold,
@@ -200,10 +271,15 @@ class ChoiCaNhan extends StatelessWidget {
                     minimumSize: Size(200, 90),
                   ),
                   onPressed: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => ketQua_Screen()));
+                    if (i == 9) {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => ketQua_Screen()));
+                    } else {
+                      _tangI();
+                      time = 30;
+                    }
                   }, // Chưa xử lý
                   child: Text(
                     'A. -1',
@@ -226,10 +302,15 @@ class ChoiCaNhan extends StatelessWidget {
                     minimumSize: Size(200, 90),
                   ),
                   onPressed: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => ketQua_Screen()));
+                    if (i == 9) {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => ketQua_Screen()));
+                    } else {
+                      _tangI();
+                      time = 30;
+                    }
                   }, // Chưa xử lý
                   child: Text(
                     'B. 0',
@@ -261,10 +342,15 @@ class ChoiCaNhan extends StatelessWidget {
                     minimumSize: Size(200, 90),
                   ),
                   onPressed: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => ketQua_Screen()));
+                    if (i == 9) {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => ketQua_Screen()));
+                    } else {
+                      _tangI();
+                      time = 30;
+                    }
                   }, // Chưa xử lý
                   child: Text(
                     'C. 2002',
@@ -290,10 +376,15 @@ class ChoiCaNhan extends StatelessWidget {
                     minimumSize: Size(200, 90),
                   ),
                   onPressed: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => ketQua_Screen()));
+                    if (i == 9) {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => ketQua_Screen()));
+                    } else {
+                      _tangI();
+                      time = 30;
+                    }
                   }, // Chưa xử lý
                   child: Text(
                     'D. 2',

@@ -1,0 +1,362 @@
+[
+  {
+    "cauHoiId": 3,
+    "doKho": "Dễ",
+    "linhVucId": 2,
+    "tenCauHoi": "Trong lịch sử của dân tộc ta, nhà nước đầu tiên được thành lập là nhà nước nào?"
+  },
+  {
+    "cauHoiId": 4,
+    "doKho": "Dễ",
+    "linhVucId": 2,
+    "tenCauHoi": "Hình ảnh lấy bông lau làm cờ nhắc chúng ta nhớ đến vị anh hùng nào?"
+  },
+  {
+    "cauHoiId": 5,
+    "doKho": "Dễ",
+    "linhVucId": 2,
+    "tenCauHoi": "Vị vua cuối cùng của chế độ phong kiến nước ta là ai?"
+  },
+  {
+    "cauHoiId": 6,
+    "doKho": "Dễ",
+    "linhVucId": 2,
+    "tenCauHoi": "Ai là tác giả của bài Quốc ca Việt Nam?"
+  },
+  {
+    "cauHoiId": 7,
+    "doKho": "Dễ",
+    "linhVucId": 2,
+    "tenCauHoi": "Ngày sinh của Bác Hồ là? "
+  },
+  {
+    "cauHoiId": 8,
+    "doKho": "Dễ",
+    "linhVucId": 2,
+    "tenCauHoi": "Ngô Quyền đánh thắng quân xâm lược nào? Tại đâu?"
+  },
+  {
+    "cauHoiId": 9,
+    "doKho": "Dễ",
+    "linhVucId": 2,
+    "tenCauHoi": "Huyện đảo Hoàng Sa thuộc tỉnh thành nào của nước ta?"
+  },
+  {
+    "cauHoiId": 10,
+    "doKho": "Dễ",
+    "linhVucId": 2,
+    "tenCauHoi": "Ngày 09/01 hằng năm là ngày gì?"
+  },
+  {
+    "cauHoiId": 11,
+    "doKho": "Dễ",
+    "linhVucId": 2,
+    "tenCauHoi": "\"Dân ta phải biết sử ta Cho tường gốc tích nước nhà Việt Nam\" là câu nói nổi tiếng của ai?"
+  },
+  {
+    "cauHoiId": 12,
+    "doKho": "Dễ",
+    "linhVucId": 2,
+    "tenCauHoi": "Lá cờ đỏ sao vàng xuất hiện lần đầu tiên do ai sáng tác?"
+  },
+  {
+    "cauHoiId": 13,
+    "doKho": "Trung bình",
+    "linhVucId": 2,
+    "tenCauHoi": "Ai đã từng làm Hoàng hậu của hai vua Đinh Tiên Hoàng và Lê Đại Hành?"
+  },
+  {
+    "cauHoiId": 14,
+    "doKho": "Trung bình",
+    "linhVucId": 2,
+    "tenCauHoi": "Vua nào trong buổi hàn vi ở chùa?"
+  },
+  {
+    "cauHoiId": 15,
+    "doKho": "Trung bình",
+    "linhVucId": 2,
+    "tenCauHoi": "Anh hùng đại thắng Đống Đa? "
+  },
+  {
+    "cauHoiId": 16,
+    "doKho": "Trung bình",
+    "linhVucId": 2,
+    "tenCauHoi": "Tây Sơn có nữ tướng tài?"
+  },
+  {
+    "cauHoiId": 17,
+    "doKho": "Trung bình",
+    "linhVucId": 2,
+    "tenCauHoi": "Vua nào chống Pháp bị đầy đảo xa?  "
+  },
+  {
+    "cauHoiId": 18,
+    "doKho": "Trung bình",
+    "linhVucId": 2,
+    "tenCauHoi": "Đông du khởi xướng, bôn ba những ngày? "
+  },
+  {
+    "cauHoiId": 19,
+    "doKho": "Trung bình",
+    "linhVucId": 2,
+    "tenCauHoi": "Bác Hồ gửi bức thư cuối cùng cho ngành giáo dục vào ngày, tháng, năm nào? "
+  },
+  {
+    "cauHoiId": 20,
+    "doKho": "Trung bình",
+    "linhVucId": 2,
+    "tenCauHoi": "Kiếm ai trả lại rùa vàng?"
+  },
+  {
+    "cauHoiId": 21,
+    "doKho": "Trung bình",
+    "linhVucId": 2,
+    "tenCauHoi": "Súng ai rền ở Vũ Quang thuở nào? "
+  },
+  {
+    "cauHoiId": 22,
+    "doKho": "Trung bình",
+    "linhVucId": 2,
+    "tenCauHoi": "Tướng nào dùng bút đánh lừa Vương-Thông?"
+  },
+  {
+    "cauHoiId": 23,
+    "doKho": "Khó",
+    "linhVucId": 2,
+    "tenCauHoi": "Sự kiện mở ra 1 thời đại mới cho cách mạng Việt Nam là?"
+  },
+  {
+    "cauHoiId": 24,
+    "doKho": "Khó",
+    "linhVucId": 2,
+    "tenCauHoi": "Chiến thắng làm thất bại hoàn toàn chiến lược chiến tranh cục bộ của Mỹ là? "
+  },
+  {
+    "cauHoiId": 25,
+    "doKho": "Khó",
+    "linhVucId": 2,
+    "tenCauHoi": "Chiến thắng làm xoay chuyển cục diện chiến tranh ở đông dương là?"
+  },
+  {
+    "cauHoiId": 26,
+    "doKho": "Khó",
+    "linhVucId": 2,
+    "tenCauHoi": "Các quyền dân tộc cơ bản gồm?"
+  },
+  {
+    "cauHoiId": 27,
+    "doKho": "Khó",
+    "linhVucId": 2,
+    "tenCauHoi": "Nội dung có lợi thực tế cho ta trong hiệp định sơ bộ là? "
+  },
+  {
+    "cauHoiId": 28,
+    "doKho": "Khó",
+    "linhVucId": 2,
+    "tenCauHoi": "Bốn tỉnh giành chính quyền sớm nhất là? "
+  },
+  {
+    "cauHoiId": 29,
+    "doKho": "Khó",
+    "linhVucId": 2,
+    "tenCauHoi": "Tính chất xã hội của nước ta từ khi Pháp đặt ách thống trị đến trước cách mạng tháng 8 thành công là?"
+  },
+  {
+    "cauHoiId": 30,
+    "doKho": "Khó",
+    "linhVucId": 2,
+    "tenCauHoi": "Sự phân hóa của Hội Việt Nam Cách mạng Thanh niên đã dẫn đến sự ra đời của các tổ chức?"
+  },
+  {
+    "cauHoiId": 31,
+    "doKho": "Khó",
+    "linhVucId": 2,
+    "tenCauHoi": "Sự kiện đưa cách mạng miền Nam bước đầu chuyển sang giai đoạn \"chiến tranh cách mạng\" là?"
+  },
+  {
+    "cauHoiId": 32,
+    "doKho": "Khó",
+    "linhVucId": 2,
+    "tenCauHoi": "Cách Mạng Tháng 8 là? "
+  },
+  {
+    "cauHoiId": 33,
+    "doKho": "Dễ",
+    "linhVucId": 3,
+    "tenCauHoi": "Có bao nhiêu châu lục?"
+  },
+  {
+    "cauHoiId": 34,
+    "doKho": "Dễ",
+    "linhVucId": 3,
+    "tenCauHoi": "Hãy kể tên 4 nước lớn nhất về diện tích?"
+  },
+  {
+    "cauHoiId": 35,
+    "doKho": "Dễ",
+    "linhVucId": 3,
+    "tenCauHoi": "Sa mạc nào bao phủ phần lớn Bắc Phi?"
+  },
+  {
+    "cauHoiId": 36,
+    "doKho": "Dễ",
+    "linhVucId": 3,
+    "tenCauHoi": "Hoa Kỳ có bao nhiêu tiểu bang? "
+  },
+  {
+    "cauHoiId": 37,
+    "doKho": "Dễ",
+    "linhVucId": 3,
+    "tenCauHoi": "Cảng lớn nhất thế giới là gì?"
+  },
+  {
+    "cauHoiId": 38,
+    "doKho": "Dễ",
+    "linhVucId": 3,
+    "tenCauHoi": "Châu lục lớn nhất là gì? "
+  },
+  {
+    "cauHoiId": 39,
+    "doKho": "Dễ",
+    "linhVucId": 3,
+    "tenCauHoi": "Kuala Lumpur là thủ đô của quốc gia nào? "
+  },
+  {
+    "cauHoiId": 40,
+    "doKho": "Dễ",
+    "linhVucId": 3,
+    "tenCauHoi": "Nước nào có tên viết tắt là CH? "
+  },
+  {
+    "cauHoiId": 41,
+    "doKho": "Dễ",
+    "linhVucId": 3,
+    "tenCauHoi": "Nga có bao nhiêu múi giờ?  "
+  },
+  {
+    "cauHoiId": 42,
+    "doKho": "Dễ",
+    "linhVucId": 3,
+    "tenCauHoi": "Đại dương nào nằm giữa Châu Phi, Châu Úc và phía nam Châu Á? "
+  },
+  {
+    "cauHoiId": 43,
+    "doKho": "Trung bình",
+    "linhVucId": 3,
+    "tenCauHoi": "Dạng địa hình chiếm diện tích lớn nhất trên lãnh thổ nước ta là?"
+  },
+  {
+    "cauHoiId": 44,
+    "doKho": "Trung bình",
+    "linhVucId": 3,
+    "tenCauHoi": "Khó khăn chủ yếu của vùng đồi núi là?"
+  },
+  {
+    "cauHoiId": 45,
+    "doKho": "Trung bình",
+    "linhVucId": 3,
+    "tenCauHoi": "Đâu không phải khó khăn chủ yếu của vùng đồi núi là?"
+  },
+  {
+    "cauHoiId": 46,
+    "doKho": "Trung bình",
+    "linhVucId": 3,
+    "tenCauHoi": "Do có nhiều bề mặt cao nguyên rộng, nên miền núi thuận lợi cho việc hình thành các vùng chuyên canh cây? "
+  },
+  {
+    "cauHoiId": 47,
+    "doKho": "Trung bình",
+    "linhVucId": 3,
+    "tenCauHoi": "Bão là thiên tai xảy ra hằng năm, đe dọa và gây hậu quả nặng nề nhất cho vùng nào ở nước ta hiện nay?"
+  },
+  {
+    "cauHoiId": 48,
+    "doKho": "Trung bình",
+    "linhVucId": 3,
+    "tenCauHoi": "Trên đất liền, lãnh thổ nước ta tiếp giáp với các quốc gia?"
+  },
+  {
+    "cauHoiId": 49,
+    "doKho": "Trung bình",
+    "linhVucId": 3,
+    "tenCauHoi": "Điểm cực Nam của nước ta thuộc tỉnh?"
+  },
+  {
+    "cauHoiId": 50,
+    "doKho": "Trung bình",
+    "linhVucId": 3,
+    "tenCauHoi": "Trong các tỉnh (thành phố) sau, tỉnh (thành phố) nào không giáp biển?"
+  },
+  {
+    "cauHoiId": 51,
+    "doKho": "Trung bình",
+    "linhVucId": 3,
+    "tenCauHoi": "Vùng có chiều rộng 200 hải lí tính từ đường cơ sở ra phía biển của nước ta là vùng? "
+  },
+  {
+    "cauHoiId": 52,
+    "doKho": "Trung bình",
+    "linhVucId": 3,
+    "tenCauHoi": "Ở nước ta, vùng biển thuộc chủ quyền quốc gia trên biển gọi là?"
+  },
+  {
+    "cauHoiId": 53,
+    "doKho": "Khó",
+    "linhVucId": 3,
+    "tenCauHoi": "Các nước Đông Nam Á không có chung đường biên giới với nước ta trên biển là? "
+  },
+  {
+    "cauHoiId": 54,
+    "doKho": "Khó",
+    "linhVucId": 3,
+    "tenCauHoi": "Việt Nam gắn liền với lục địa và đại dương nào sau đây?  "
+  },
+  {
+    "cauHoiId": 55,
+    "doKho": "Khó",
+    "linhVucId": 3,
+    "tenCauHoi": "Theo Công ước của Liên hợp quốc về Luật Biển năm 1982, nhà nước ta có chủ quyền gì ở vùng đặc quyền kinh tế?"
+  },
+  {
+    "cauHoiId": 56,
+    "doKho": "Khó",
+    "linhVucId": 3,
+    "tenCauHoi": "4.\tHệ tọa độ địa lí trên đất liền nước ta là?"
+  },
+  {
+    "cauHoiId": 57,
+    "doKho": "Khó",
+    "linhVucId": 3,
+    "tenCauHoi": "Vùng biển mà nước ta có quyền thực hiện các biện pháp an ninh quốc phòng, kiểm soát thuế quan, các quy định về y tế, môi trường nhập cư là vùng? "
+  },
+  {
+    "cauHoiId": 58,
+    "doKho": "Khó",
+    "linhVucId": 3,
+    "tenCauHoi": "Hai vịnh biển có diện tích lớn nhất nước ta là? "
+  },
+  {
+    "cauHoiId": 59,
+    "doKho": "Khó",
+    "linhVucId": 3,
+    "tenCauHoi": "Đường biên giới trên biển và trên đất liền của nước ta dài gặp khó khăn lớn nhất về? "
+  },
+  {
+    "cauHoiId": 60,
+    "doKho": "Khó",
+    "linhVucId": 3,
+    "tenCauHoi": "Sự đa dạng về bản sắc dân tộc của nước ta là do vị trí?"
+  },
+  {
+    "cauHoiId": 61,
+    "doKho": "Khó",
+    "linhVucId": 3,
+    "tenCauHoi": "Nguyên nhân nào dẫn đến sự yếu kém, khó khăn của nền kinh tế nước ta trước đây?"
+  },
+  {
+    "cauHoiId": 62,
+    "doKho": "Khó",
+    "linhVucId": 3,
+    "tenCauHoi": "Đối với các tỉnh trung du, miền núi phía Bắc, Tây Nguyên và đồng bằng sông Cửu Long thì vấn đề cần quan tâm nhất trong sự nghiệp giáo dục hiện nay là?"
+  }
+]

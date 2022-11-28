@@ -129,7 +129,6 @@ class Register extends StatelessWidget {
               Container(
                 padding: const EdgeInsets.all(15),
                 child: const TextField(
-                  
                   decoration: InputDecoration(
                     //labelText: 'Số điện thoại',
                     border: OutlineInputBorder(),
