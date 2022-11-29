@@ -1,13 +1,21 @@
 import 'package:doan_android/quen_mat_khau.dart';
 import 'package:doan_android/dang_ky.dart';
 import 'package:doan_android/trangchu.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
-class LoginScreen extends StatelessWidget {
-  TextEditingController str1 = TextEditingController();
-  TextEditingController str2 = TextEditingController();
-  String s1 = 'admin';
-  String s2 = '12345';
+class LoginScreen extends StatefulWidget {
+  @override
+  State<StatefulWidget> createState() {
+    return LoginScreenState();
+  }
+}
+
+class LoginScreenState extends State<LoginScreen> {
+  TextEditingController txtEmail = TextEditingController();
+  TextEditingController txtPass = TextEditingController();
+  final _auth = FirebaseAuth.instance;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,6 +38,43 @@ class LoginScreen extends StatelessWidget {
               ),
             ),
           ),*/
+          // Column(
+          //   mainAxisAlignment: MainAxisAlignment.start,
+          //   children: [
+          //     Row(
+          //       //padding: EdgeInsets.only(right: 280),
+          //       // children: Text("Tài khoản",
+          //       // style: TextStyle(
+          //       //   fontSize: 18,
+          //       //   fontWeight: FontWeight.w700,
+          //       // ),
+          //       // ),
+          //       children: [
+          //         Container(
+          //           padding: EdgeInsets.only(left: 15),
+          //           child: const Text(
+          //             "Tài khoản",
+          //             style: TextStyle(
+          //               fontSize: 18,
+          //               fontWeight: FontWeight.w700,
+          //             ),
+          //           ),
+          //         ),
+          //       ],
+          //     ),
+          //     Container(
+          //       padding: const EdgeInsets.all(15),
+          //       child: TextField(
+          //         controller: str1,
+          //         decoration: const InputDecoration(
+          //           //hintText: 'Nhập Tài Khoản',
+          //           border: OutlineInputBorder(),
+          //           prefixIcon: Icon(Icons.person),
+          //         ),
+          //       ),
+          //     ),
+          //   ],
+          // ),
           Column(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
@@ -45,7 +90,7 @@ class LoginScreen extends StatelessWidget {
                   Container(
                     padding: EdgeInsets.only(left: 15),
                     child: const Text(
-                      "Tài khoản",
+                      "Email",
                       style: TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.w700,
@@ -57,7 +102,7 @@ class LoginScreen extends StatelessWidget {
               Container(
                 padding: const EdgeInsets.all(15),
                 child: TextField(
-                  controller: str1,
+                  controller: txtEmail,
                   decoration: const InputDecoration(
                     //hintText: 'Nhập Tài Khoản',
                     border: OutlineInputBorder(),
@@ -86,7 +131,7 @@ class LoginScreen extends StatelessWidget {
               Container(
                 padding: const EdgeInsets.all(15),
                 child: TextField(
-                  controller: str2,
+                  controller: txtPass,
                   obscureText: true,
                   decoration: const InputDecoration(
                     //hintText: 'Nhập Mật Khẩu',
@@ -104,101 +149,31 @@ class LoginScreen extends StatelessWidget {
                 //padding: const EdgeInsets.all(20),
                 minimumSize: Size(100, 60),
               ),
-              onPressed: () {
-                if (str1.text.isEmpty && str2.text.isEmpty) {
-                  showDialog(
-                      context: context,
-                      builder: (context) {
-                        return AlertDialog(
-                          title: const Text('Đăng Nhập'),
-                          content:
-                              const Text('Bạn chưa nhập Username, Password'),
-                          actions: [
-                            TextButton(
-                                onPressed: () => Navigator.pop(context),
-                                child: const Text('OK'))
-                          ],
-                        );
-                      });
-                } else if (str1.text == s1 && str2.text == s2) {
-                  showDialog(
-                      context: context,
-                      builder: (context) {
-                        return AlertDialog(
-                          title: const Text('Đăng Nhập'),
-                          content: const Text(
-                              'Chúc mừng bạn đã đăng nhập thành công'),
-                          actions: [
-                            TextButton(
-                              onPressed: () => Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => TrangChu(),
-                                ),
-                              ),
-                              child: const Text('OK'),
-                            ),
-                          ],
-                        );
-                      });
-                } else if (str1.text != s1 && str2.text == s2) {
-                  showDialog(
-                      context: context,
-                      builder: (context) {
-                        return AlertDialog(
-                          title: const Text('Đăng Nhập'),
-                          content: const Text('Bạn nhập Username chưa đúng'),
-                          actions: [
-                            TextButton(
-                                onPressed: () => Navigator.pop(context),
-                                child: const Text('OK'))
-                          ],
-                        );
-                      });
-                } else if (str1.text == s1 && str2.text != s2) {
-                  showDialog(
-                      context: context,
-                      builder: (context) {
-                        return AlertDialog(
-                          title: const Text('Đăng Nhập'),
-                          content: const Text('Bạn nhập Password chưa đúng'),
-                          actions: [
-                            TextButton(
-                                onPressed: () => Navigator.pop(context),
-                                child: const Text('OK'))
-                          ],
-                        );
-                      });
-                } else if (str1.text.isEmpty) {
-                  showDialog(
-                      context: context,
-                      builder: (context) {
-                        return AlertDialog(
-                          title: const Text('Đăng Nhập'),
-                          content: const Text('Bạn chưa nhập Username'),
-                          actions: [
-                            TextButton(
-                                onPressed: () => Navigator.pop(context),
-                                child: const Text('OK'))
-                          ],
-                        );
-                      });
-                } else if (str2.text.isEmpty) {
-                  showDialog(
-                      context: context,
-                      builder: (context) {
-                        return AlertDialog(
-                          title: const Text('Đăng Nhập'),
-                          content: const Text('Bạn chưa nhập Password'),
-                          actions: [
-                            TextButton(
-                                onPressed: () => Navigator.pop(context),
-                                child: const Text('OK'))
-                          ],
-                        );
-                      });
+              onPressed: () async {
+                try {
+                  final _user = _auth.signInWithEmailAndPassword(
+                      email: txtEmail.text, password: txtPass.text);
+                  _auth.authStateChanges().listen((event) {
+                    if (event != null) {
+                      txtEmail.clear();
+                      txtPass.clear();
+                      Navigator.pushNamedAndRemoveUntil(
+                        context,
+                        'home',
+                        (route) => false,
+                      );
+                    } else {
+                      final snackBar = SnackBar(
+                          content: Text('Email hoặc Mật Khẩu Không Đúng'));
+                      ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                    }
+                  });
+                } catch (e) {
+                  final snackBar =
+                      SnackBar(content: Text('Lỗi Kết Nối Đến Server'));
+                  ScaffoldMessenger.of(context).showSnackBar(snackBar);
                 }
-              }, //Bổ sung 2
+              },
               child: const Text(
                 'Đăng Nhập',
                 style: TextStyle(
@@ -234,8 +209,19 @@ class LoginScreen extends StatelessWidget {
                 Container(
                   child: TextButton(
                     onPressed: () {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => Register()));
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => Register(),
+                        ),
+                      ).then((value) {
+                        if (value != null) {
+                          final snackBar = SnackBar(
+                            content: Text(value),
+                          );
+                          ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                        }
+                      });
                     }, //Bổ sung 3
                     child: const Text(
                       'Đăng ký',

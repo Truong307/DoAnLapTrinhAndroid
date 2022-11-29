@@ -1,6 +1,7 @@
 import 'package:doan_android/chinhsuahoso.dart';
 import 'package:doan_android/dang_nhap.dart';
 import 'package:doan_android/trangchu.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class caNhan_Screen extends StatelessWidget {
@@ -9,12 +10,17 @@ class caNhan_Screen extends StatelessWidget {
     Widget logOutButton = Container(
       child: ElevatedButton(
         onPressed: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => LoginScreen(),
-            ),
-          );
+          FirebaseAuth.instance.signOut();
+          Navigator.pushAndRemoveUntil(
+              context,
+              MaterialPageRoute(
+                builder: (context) => LoginScreen(),
+              ),
+              (route) => false);
+          // Navigator.push(
+          //             context,
+          //             MaterialPageRoute(
+          //                 builder: (context) => LoginScreen()));
         },
         child: const Text(
           'Đăng xuất',

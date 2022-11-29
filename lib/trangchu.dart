@@ -1,12 +1,13 @@
-import 'dart:ui';
 import 'package:doan_android/banbe.dart';
 import 'package:doan_android/bangxephang.dart';
 import 'package:doan_android/canhan.dart';
+import 'package:doan_android/dang_nhap.dart';
 import 'package:doan_android/lichsuchoicanhan.dart';
 import 'package:doan_android/nutchoingay.dart';
 import 'package:doan_android/thongbao.dart';
 import 'package:doan_android/tintuc.dart';
 import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class TrangChu extends StatefulWidget {
   @override
@@ -82,9 +83,24 @@ class TrangChu_State extends State<TrangChu> {
               ),
               iconSize: 30,
               onPressed: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => LichSuChoiCaNhan()));
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => LichSuChoiCaNhan()));
               },
+            ),
+            IconButton(
+              onPressed: () {
+                FirebaseAuth.instance.signOut();
+                Navigator.pushAndRemoveUntil(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => LoginScreen(),
+                    ),
+                    (route) => false);
+              },
+              icon: Icon(Icons.exit_to_app),
+              color: Colors.grey,
             ),
           ],
         ),

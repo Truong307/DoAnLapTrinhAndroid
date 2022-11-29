@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "679318223640",
+    "project_id": "traloicauhoitracnghiem",
+    "storage_bucket": "traloicauhoitracnghiem.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:679318223640:android:9b749d6da0388af223fc6d",
+        "android_client_info": {
+          "package_name": "com.example.doan_android"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "679318223640-f1rgpr75v80fkstnh44gdeq5un2qk4t3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCPA7HDGulX8STKE6JPvOIL3JGbYQoLpLI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "679318223640-f1rgpr75v80fkstnh44gdeq5un2qk4t3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
