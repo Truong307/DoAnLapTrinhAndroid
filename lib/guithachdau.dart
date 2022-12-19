@@ -2,6 +2,7 @@ import 'package:doan_android/nutchoingay.dart';
 import 'package:doan_android/choithachdau.dart';
 import 'package:doan_android/phong_cho_thach_dau.dart';
 import 'package:doan_android/trangchu.dart';
+import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 
 class GuiThachDau extends StatefulWidget {
@@ -11,6 +12,17 @@ class GuiThachDau extends StatefulWidget {
 
 class GuiThachDau_State extends State<GuiThachDau> {
   //=========================================//
+  final ref = FirebaseDatabase.instance.ref();
+  void insertData(int LoaiThongBao, String NoiDung, int TrangThai, String uid1,
+      String uid2) {
+    ref.child("ThongBao").push().set({
+      'LoaiThongBao': LoaiThongBao,
+      'NoiDung': NoiDung,
+      'TrangThai': TrangThai,
+      'uid1': uid1,
+      'uid2': uid2,
+    });
+  }
 
   //==========================================//
   @override
@@ -377,8 +389,16 @@ class GuiThachDau_State extends State<GuiThachDau> {
                 elevation: 20,
               ),
               onPressed: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => phongChoThachDau()));
+                // insertData(
+                //     2,
+                //     layFullName().toString() + ' gửi bạn lời mời thách đấu',
+                //     0,
+                //     uidUser,
+                //     lsNguoiDung[index].uid.toString());
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => phongChoThachDau()));
               }, //Chưa xử lý
               child: const Padding(
                 padding: EdgeInsets.only(

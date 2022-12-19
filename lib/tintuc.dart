@@ -105,31 +105,31 @@ class TinTuc_State extends State<TinTuc_Home> {
             ),
           ),
           //===========//
-          Container(
-            margin: EdgeInsets.only(
-              left: 10,
-              right: 10,
-            ),
-            child: ListTile(
-              title: const Text(
-                'Chào mừng đến với bình nguyên vô tận...',
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 15,
-                ),
-              ),
-              trailing: TextButton(
-                onPressed: () {},
-                child: Text(
-                  'xem thêm',
-                  style: TextStyle(
-                    fontSize: 10,
-                    color: Colors.blue,
-                  ),
-                ),
-              ),
-            ),
-          ),
+          // Container(
+          //   margin: EdgeInsets.only(
+          //     left: 10,
+          //     right: 10,
+          //   ),
+          //   child: ListTile(
+          //     title: const Text(
+          //       'Chào mừng đến với bình nguyên vô tận...',
+          //       style: TextStyle(
+          //         fontWeight: FontWeight.bold,
+          //         fontSize: 15,
+          //       ),
+          //     ),
+          //     trailing: TextButton(
+          //       onPressed: () {},
+          //       child: Text(
+          //         'xem thêm',
+          //         style: TextStyle(
+          //           fontSize: 10,
+          //           color: Colors.blue,
+          //         ),
+          //       ),
+          //     ),
+          //   ),
+          // ),
           Container(
             margin: EdgeInsets.only(
               left: 10,

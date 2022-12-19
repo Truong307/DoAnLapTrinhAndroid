@@ -196,8 +196,8 @@ class resultScreenApp extends StatelessWidget {
               ),
             ),
             onPressed: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => TrangChu()));
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => TrangChu()));
             },
             child: const Text(
               'Trang chủ',

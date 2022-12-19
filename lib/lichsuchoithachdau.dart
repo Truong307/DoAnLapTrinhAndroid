@@ -1,6 +1,9 @@
 import 'package:doan_android/chitietlichsu.dart';
 import 'package:doan_android/lichsuchoicanhan.dart';
+import 'package:doan_android/nguoidung_object.dart';
 import 'package:doan_android/trangchu.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 
 class LichSuChoiThachDau extends StatelessWidget {
@@ -20,6 +23,38 @@ class LichSuChoi_Home extends StatefulWidget {
 }
 
 class LichSuChoi_State extends State<LichSuChoi_Home> {
+  final ref = FirebaseDatabase.instance.ref();
+  List<UserObject> lsNguoiDung = [];
+  String uidUser = '';
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    FirebaseAuth.instance.authStateChanges().listen((User? user) {
+      if (user != null) {
+        uidUser = user.uid;
+      }
+    });
+    retrieveUsersData();
+  }
+
+  hienThongTinUser() {
+    for (int i = 0; i < lsNguoiDung.length; i++) {
+      if (lsNguoiDung[i].uid == uidUser) {
+        return lsNguoiDung[i];
+      }
+    }
+  }
+
+  void retrieveUsersData() {
+    ref.child("Users").onChildAdded.listen((data) {
+      UserObject userObject = UserObject.formJson(data.snapshot.value as Map);
+      lsNguoiDung.add(userObject);
+      setState(() {});
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
 //======================================================//
@@ -80,7 +115,9 @@ class LichSuChoi_State extends State<LichSuChoi_Home> {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => LichSuChoiCaNhan()));
+                        builder: (context) => LichChoiCaNhan(
+                              user: hienThongTinUser(),
+                            )));
               }, // Chưa xử lý
               child: const Text(
                 'Cá nhân',
@@ -152,7 +189,9 @@ class LichSuChoi_State extends State<LichSuChoi_Home> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => chiTietLichSu()));
+                                builder: (context) => chiTietLichSu(
+                                      kq: null,
+                                    )));
                       }, // Chưa xử lý
                       child: const Text(
                         'Xem thêm',
@@ -207,7 +246,9 @@ class LichSuChoi_State extends State<LichSuChoi_Home> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => chiTietLichSu()));
+                                builder: (context) => chiTietLichSu(
+                                      kq: null,
+                                    )));
                       }, // Chưa xử lý
                       child: const Text(
                         'Xem thêm',

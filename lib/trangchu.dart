@@ -1,11 +1,16 @@
 import 'dart:ui';
 import 'package:doan_android/banbe.dart';
 import 'package:doan_android/bangxephang.dart';
+import 'package:doan_android/bocauhoi_provider.dart';
 import 'package:doan_android/canhan.dart';
+import 'package:doan_android/dang_nhap.dart';
 import 'package:doan_android/lichsuchoicanhan.dart';
+import 'package:doan_android/nguoidung_object.dart';
 import 'package:doan_android/nutchoingay.dart';
 import 'package:doan_android/thongbao.dart';
 import 'package:doan_android/tintuc.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 
 class TrangChu extends StatefulWidget {
@@ -14,6 +19,55 @@ class TrangChu extends StatefulWidget {
 }
 
 class TrangChu_State extends State<TrangChu> {
+  final ref = FirebaseDatabase.instance.ref();
+  List<KetQuaChoiObject> lsKQChoi = [];
+  List<UserObject> lsNguoiDung = [];
+  String uidUser = '';
+
+  void loadDanhSach() async {
+    final user = await BoCauHoiProvider.layAllKetQuaChoi();
+    setState(() {});
+    lsKQChoi = user;
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    FirebaseAuth.instance.authStateChanges().listen((User? user) {
+      if (user != null) {
+        uidUser = user.uid;
+      }
+    });
+    loadDanhSach();
+    retrieveUsersData();
+  }
+
+  hienThongTinUser() {
+    for (int i = 0; i < lsNguoiDung.length; i++) {
+      if (lsNguoiDung[i].uid == uidUser) {
+        return lsNguoiDung[i];
+      }
+    }
+    return null;
+  }
+
+  _layTen() {
+    for (int i = 0; i < lsNguoiDung.length; i++) {
+      if (lsNguoiDung[i].uid == uidUser) {
+        return '${lsNguoiDung[i].FullName}';
+      }
+    }
+    return 'Đang lấy dữ liệu';
+  }
+
+  void retrieveUsersData() {
+    ref.child("Users").onChildAdded.listen((data) {
+      UserObject userObject = UserObject.formJson(data.snapshot.value as Map);
+      lsNguoiDung.add(userObject);
+      setState(() {});
+    });
+  }
+
   int _selectedIndex = 2;
 
   void OntabSelected(int index) {
@@ -40,14 +94,14 @@ class TrangChu_State extends State<TrangChu> {
         title: Row(
           children: [
             CircleAvatar(
-              child: Image.asset("images/user1.png"),
+              child: Image.asset("images/hacker.png"),
             ),
             Expanded(
               flex: 1,
               child: Container(
                 margin: EdgeInsets.only(left: 10),
                 child: Text(
-                  'truong307',
+                  _layTen(),
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     color: Colors.black,
@@ -82,9 +136,50 @@ class TrangChu_State extends State<TrangChu> {
               ),
               iconSize: 30,
               onPressed: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => LichSuChoiCaNhan()));
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => LichChoiCaNhan(
+                      user: hienThongTinUser(),
+                    ),
+                  ),
+                );
               },
+            ),
+            IconButton(
+              onPressed: () {
+                showDialog(
+                    context: context,
+                    builder: (ctx) {
+                      return AlertDialog(
+                        title: Text('Đăng xuất !!!'),
+                        content: Text('Bạn có muốn thoát ? '),
+                        actions: [
+                          TextButton(
+                            onPressed: () {
+                              Navigator.of(ctx).pop();
+                            },
+                            child: Text('Không'),
+                          ),
+                          TextButton(
+                            onPressed: () {
+                              Navigator.of(ctx).pop();
+
+                              FirebaseAuth.instance.signOut();
+
+                              Navigator.of(context).pushReplacement(
+                                  MaterialPageRoute(builder: (context) {
+                                return LoginScreen();
+                              }));
+                            },
+                            child: Text('Có'),
+                          ),
+                        ],
+                      );
+                    });
+              },
+              icon: const Icon(Icons.logout),
+              color: Colors.grey,
             ),
           ],
         ),

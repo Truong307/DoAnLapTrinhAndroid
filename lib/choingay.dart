@@ -1,8 +1,15 @@
+import 'dart:ffi';
+
+import 'package:doan_android/bocauhoi_provider.dart';
+import 'package:doan_android/dap_an_object.dart';
 import 'package:doan_android/man_hinh_choi.dart';
+import 'package:doan_android/nguoidung_object.dart';
 import 'package:doan_android/nutchoingay.dart';
 import 'package:doan_android/trangchu.dart';
 import 'package:doan_android/man_hinh_choi.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 class ChoiNgay extends StatefulWidget {
   @override
@@ -10,7 +17,93 @@ class ChoiNgay extends StatefulWidget {
 }
 
 class ChoiNgay_State extends State<ChoiNgay> {
+  List<BoCauHoiObject> lsBoCauHoi = [];
+  List<BoCauHoiObject> lsDiaLyDe = [];
+  List<BoCauHoiObject> lsDiaLyTB = [];
+  List<BoCauHoiObject> lsDiaLyKho = [];
+  List<BoCauHoiObject> lsLichSuDe = [];
+  List<BoCauHoiObject> lsLichSuTB = [];
+  List<BoCauHoiObject> lsLichSuKho = [];
+  List<UserObject> lsUsers = [];
+  List list = [];
+  String uid = "";
+
+  void loaddanhsach() async {
+    final data1 = await BoCauHoiProvider.layToanBoCauHoi();
+    final data2 = await BoCauHoiProvider.layCauHoiLSuDe();
+    final data3 = await BoCauHoiProvider.layCauHoiLSuTB();
+    final data4 = await BoCauHoiProvider.layCauHoiLSuKho();
+    final data5 = await BoCauHoiProvider.layCauHoiDiaLyDe();
+    final data6 = await BoCauHoiProvider.layCauHoiDiaLyTB();
+    final data7 = await BoCauHoiProvider.layCauHoiDiaLyKho();
+    final data8 = await BoCauHoiProvider.danhSachNguoiDung();
+    setState(() {});
+    lsBoCauHoi = data1;
+    lsLichSuDe = data2;
+    lsLichSuTB = data3;
+    lsLichSuKho = data4;
+    lsDiaLyDe = data5;
+    lsDiaLyTB = data6;
+    lsDiaLyKho = data7;
+    lsUsers = data8;
+    list.add(lsBoCauHoi);
+    list.add(lsLichSuDe);
+    list.add(lsLichSuTB);
+    list.add(lsLichSuKho);
+    list.add(lsDiaLyDe);
+    list.add(lsDiaLyTB);
+    list.add(lsDiaLyKho);
+  }
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    loaddanhsach();
+    layThongTinUser();
+  }
+
   //=========================================//
+  String cheDo = "Độ Khó";
+  String linhVuc = "Lĩnh Vực";
+
+  _chonBoCauHoi() {
+    if (cheDo == "Dễ" && linhVuc == 'Lịch Sử') {
+      return 1;
+    }
+    if (cheDo == "Trung Bình" && linhVuc == 'Lịch Sử') {
+      return 2;
+    }
+    if (cheDo == "Khó" && linhVuc == 'Lịch Sử') {
+      return 3;
+    }
+    if (cheDo == "Dễ" && linhVuc == 'Địa Lý') {
+      return 4;
+    }
+    if (cheDo == "Trung Bình" && linhVuc == 'Địa Lý') {
+      return 5;
+    }
+    if (cheDo == "Khó" && linhVuc == 'Địa Lý') {
+      return 6;
+    }
+  }
+
+  hienThongTinUser() {
+    for (int i = 0; i < lsUsers.length; i++) {
+      if (lsUsers[i].uid == uid) {
+        return lsUsers[i];
+      }
+    }
+  }
+
+  layThongTinUser() {
+    FirebaseAuth.instance.authStateChanges().listen((User? user) {
+      if (user != null) {
+        uid = user.uid;
+      }
+    });
+  }
+
   //==========================================//
   @override
   Widget build(BuildContext context) {
@@ -88,7 +181,14 @@ class ChoiNgay_State extends State<ChoiNgay> {
                                   });
                                 },
                                 child: ElevatedButton(
-                                  onPressed: () {}, // Chưa xử lý
+                                  onPressed: () {
+                                    setState(() {
+                                      //print("Val--->{}$val");
+                                      //isHoverEasy = val;
+                                      cheDo = "Dễ";
+                                    });
+                                    Navigator.pop(context);
+                                  }, // Chưa xử lý
                                   child: Padding(
                                     padding: EdgeInsets.only(
                                       top: 5,
@@ -110,7 +210,14 @@ class ChoiNgay_State extends State<ChoiNgay> {
                             Container(
                               margin: const EdgeInsets.all(10),
                               child: ElevatedButton(
-                                onPressed: () {}, // Chưa xử lý
+                                onPressed: () {
+                                  setState(() {
+                                    //print("Val--->{}$val");
+                                    //isHoverEasy = val;
+                                    cheDo = "Trung Bình";
+                                  });
+                                  Navigator.pop(context);
+                                }, // Chưa xử lý
                                 child: const Padding(
                                   padding: EdgeInsets.only(
                                     top: 5,
@@ -130,7 +237,14 @@ class ChoiNgay_State extends State<ChoiNgay> {
                             ),
                             Container(
                               child: ElevatedButton(
-                                onPressed: () {}, // Chưa xử lý
+                                onPressed: () {
+                                  setState(() {
+                                    //print("Val--->{}$val");
+                                    //isHoverEasy = val;
+                                    cheDo = "Khó";
+                                  });
+                                  Navigator.pop(context);
+                                }, // Chưa xử lý
                                 child: const Padding(
                                   padding: EdgeInsets.only(
                                     top: 5,
@@ -155,7 +269,7 @@ class ChoiNgay_State extends State<ChoiNgay> {
                   },
                 );
               }, //Xử lý
-              child: const Padding(
+              child: Padding(
                 padding: EdgeInsets.only(
                   left: 20,
                   right: 20,
@@ -163,7 +277,7 @@ class ChoiNgay_State extends State<ChoiNgay> {
                   bottom: 10,
                 ),
                 child: Text(
-                  'Độ Khó',
+                  '$cheDo',
                   style: TextStyle(
                     fontSize: 24,
                     fontWeight: FontWeight.bold,
@@ -216,7 +330,12 @@ class ChoiNgay_State extends State<ChoiNgay> {
                                   Container(
                                     margin: const EdgeInsets.all(5),
                                     child: ElevatedButton(
-                                      onPressed: () {},
+                                      onPressed: () {
+                                        setState(() {
+                                          linhVuc = "Lịch Sử";
+                                        });
+                                        Navigator.pop(context);
+                                      },
                                       child: const Padding(
                                         padding: EdgeInsets.only(
                                           top: 10,
@@ -236,7 +355,12 @@ class ChoiNgay_State extends State<ChoiNgay> {
                                   Container(
                                     margin: const EdgeInsets.all(5),
                                     child: ElevatedButton(
-                                      onPressed: () {},
+                                      onPressed: () {
+                                        setState(() {
+                                          linhVuc = "Địa Lý";
+                                        });
+                                        Navigator.pop(context);
+                                      },
                                       child: const Padding(
                                         padding: EdgeInsets.only(
                                           top: 10,
@@ -245,7 +369,7 @@ class ChoiNgay_State extends State<ChoiNgay> {
                                           right: 17,
                                         ),
                                         child: Text(
-                                          'Địa Lí',
+                                          'Địa Lý',
                                           style: TextStyle(
                                             fontSize: 15,
                                           ),
@@ -256,93 +380,93 @@ class ChoiNgay_State extends State<ChoiNgay> {
                                 ],
                               ),
                             ),
-                            Container(
-                              child: Row(
-                                children: [
-                                  Container(
-                                    margin: const EdgeInsets.all(5),
-                                    child: ElevatedButton(
-                                      onPressed: () {},
-                                      child: const Padding(
-                                        padding: EdgeInsets.only(
-                                          top: 10,
-                                          bottom: 10,
-                                          left: 5,
-                                          right: 5,
-                                        ),
-                                        child: Text(
-                                          'Pháp Luật',
-                                          style: TextStyle(
-                                            fontSize: 15,
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                  Container(
-                                    margin: EdgeInsets.all(5),
-                                    child: ElevatedButton(
-                                      onPressed: () {},
-                                      child: const Padding(
-                                        padding: EdgeInsets.only(
-                                          top: 10,
-                                          bottom: 10,
-                                          left: 14,
-                                          right: 14,
-                                        ),
-                                        child: Text(
-                                          'Xã Hội',
-                                          style: TextStyle(
-                                            fontSize: 15,
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                            Container(
-                              child: Row(
-                                children: [
-                                  Container(
-                                    margin: const EdgeInsets.all(5),
-                                    child: ElevatedButton(
-                                      onPressed: () {},
-                                      child: const Padding(
-                                        padding: EdgeInsets.only(top: 1),
-                                        child: Text(
-                                          'Khoa Học -\n Công Nghệ',
-                                          style: TextStyle(
-                                            fontSize: 15,
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                  Container(
-                                    margin: const EdgeInsets.all(5),
-                                    child: ElevatedButton(
-                                      onPressed: () {},
-                                      child: const Padding(
-                                        padding: EdgeInsets.only(
-                                          top: 9,
-                                          bottom: 9,
-                                          left: 8,
-                                          right: 8,
-                                        ),
-                                        child: Text(
-                                          'Văn Học',
-                                          style: TextStyle(
-                                            fontSize: 15,
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
+                            // Container(
+                            //   child: Row(
+                            //     children: [
+                            //       Container(
+                            //         margin: const EdgeInsets.all(5),
+                            //         child: ElevatedButton(
+                            //           onPressed: () {},
+                            //           child: const Padding(
+                            //             padding: EdgeInsets.only(
+                            //               top: 10,
+                            //               bottom: 10,
+                            //               left: 5,
+                            //               right: 5,
+                            //             ),
+                            //             child: Text(
+                            //               'Pháp Luật',
+                            //               style: TextStyle(
+                            //                 fontSize: 15,
+                            //               ),
+                            //             ),
+                            //           ),
+                            //         ),
+                            //       ),
+                            //       Container(
+                            //         margin: EdgeInsets.all(5),
+                            //         child: ElevatedButton(
+                            //           onPressed: () {},
+                            //           child: const Padding(
+                            //             padding: EdgeInsets.only(
+                            //               top: 10,
+                            //               bottom: 10,
+                            //               left: 14,
+                            //               right: 14,
+                            //             ),
+                            //             child: Text(
+                            //               'Xã Hội',
+                            //               style: TextStyle(
+                            //                 fontSize: 15,
+                            //               ),
+                            //             ),
+                            //           ),
+                            //         ),
+                            //       ),
+                            //     ],
+                            //   ),
+                            // ),
+                            // Container(
+                            //   child: Row(
+                            //     children: [
+                            //       Container(
+                            //         margin: const EdgeInsets.all(5),
+                            //         child: ElevatedButton(
+                            //           onPressed: () {},
+                            //           child: const Padding(
+                            //             padding: EdgeInsets.only(top: 1),
+                            //             child: Text(
+                            //               'Khoa Học -\n Công Nghệ',
+                            //               style: TextStyle(
+                            //                 fontSize: 15,
+                            //               ),
+                            //             ),
+                            //           ),
+                            //         ),
+                            //       ),
+                            //       Container(
+                            //         margin: const EdgeInsets.all(5),
+                            //         child: ElevatedButton(
+                            //           onPressed: () {},
+                            //           child: const Padding(
+                            //             padding: EdgeInsets.only(
+                            //               top: 9,
+                            //               bottom: 9,
+                            //               left: 8,
+                            //               right: 8,
+                            //             ),
+                            //             child: Text(
+                            //               'Văn Học',
+                            //               style: TextStyle(
+                            //                 fontSize: 15,
+                            //               ),
+                            //             ),
+                            //           ),
+                            //         ),
+                            //       ),
+                            //     ],
+                            //   ),
+                            // ),
                           ],
                         ),
                       ),
@@ -350,7 +474,7 @@ class ChoiNgay_State extends State<ChoiNgay> {
                   },
                 );
               }, //Chưa xử lý
-              child: const Padding(
+              child: Padding(
                 padding: EdgeInsets.only(
                   left: 13,
                   right: 13,
@@ -358,7 +482,7 @@ class ChoiNgay_State extends State<ChoiNgay> {
                   bottom: 10,
                 ),
                 child: Text(
-                  'Lĩnh Vực',
+                  '$linhVuc',
                   style: TextStyle(
                     fontSize: 24,
                     fontWeight: FontWeight.bold,
@@ -376,12 +500,41 @@ class ChoiNgay_State extends State<ChoiNgay> {
                 elevation: 20,
               ),
               onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => ChoiCaNhan(),
-                  ),
-                );
+                if (linhVuc == "Lĩnh Vực" || cheDo == "Độ Khó") {
+                  showDialog(
+                      context: context,
+                      builder: (context) {
+                        return AlertDialog(
+                          icon: Icon(
+                            Icons.info_outline,
+                            color: Colors.blue,
+                          ),
+                          title: Text("Thông Báo"),
+                          content: Text(
+                            'Hãy chọn chế độ chơi',
+                            textAlign: TextAlign.center,
+                          ),
+                          actions: [
+                            TextButton(
+                              onPressed: () {
+                                Navigator.pop(context);
+                              },
+                              child: Text("OK"),
+                            ),
+                          ],
+                        );
+                      });
+                } else {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => ChoiCaNhan(
+                        list: list[_chonBoCauHoi()],
+                        User: hienThongTinUser(),
+                      ),
+                    ),
+                  );
+                }
               }, //Chưa xử lý
               child: const Padding(
                 padding: EdgeInsets.only(

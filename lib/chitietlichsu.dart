@@ -1,11 +1,58 @@
 import 'package:doan_android/choingay.dart';
+import 'package:doan_android/ket_qua_thach_dau.dart';
 import 'package:doan_android/lichsuchoicanhan.dart';
 import 'package:doan_android/man_hinh_choi.dart';
+import 'package:doan_android/nguoidung_object.dart';
 import 'package:doan_android/trangchu.dart';
 import 'package:doan_android/xemlaicauhoi.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 
-class chiTietLichSu extends StatelessWidget {
+class chiTietLichSu extends StatefulWidget {
+  KetQuaChoiObject? kq;
+
+  chiTietLichSu({Key? key, this.kq}) : super(key: key);
+
+  @override
+  State<StatefulWidget> createState() {
+    return chiTietLichSuState();
+  }
+}
+
+class chiTietLichSuState extends State<chiTietLichSu> {
+  final ref = FirebaseDatabase.instance.ref();
+  List<UserObject> lsNguoiDung = [];
+  String uidUser = '';
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    FirebaseAuth.instance.authStateChanges().listen((User? user) {
+      if (user != null) {
+        uidUser = user.uid;
+      }
+    });
+    retrieveUsersData();
+  }
+
+  hienThongTinUser() {
+    for (int i = 0; i < lsNguoiDung.length; i++) {
+      if (lsNguoiDung[i].uid == uidUser) {
+        return lsNguoiDung[i];
+      }
+    }
+  }
+
+  void retrieveUsersData() {
+    ref.child("Users").onChildAdded.listen((data) {
+      UserObject userObject = UserObject.formJson(data.snapshot.value as Map);
+      lsNguoiDung.add(userObject);
+      setState(() {});
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     Widget backButton = Container(
@@ -17,8 +64,12 @@ class chiTietLichSu extends StatelessWidget {
               tooltip: 'Trở về',
               //Xử trở về trang chủ
               onPressed: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => LichSuChoiCaNhan()));
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => LichChoiCaNhan(
+                              user: hienThongTinUser(),
+                            )));
               },
               //========================//
               icon: Image.asset('images/undo.png'),
@@ -56,7 +107,9 @@ class chiTietLichSu extends StatelessWidget {
                 children: [
                   Padding(padding: EdgeInsets.only(left: 10, top: 80)),
                   Text(
-                    'Tên: Nguyễn Văn A',
+                    widget.kq == null
+                        ? 'Tên: Nguyễn Văn A'
+                        : 'Tên: ${widget.kq?.ten}',
                     style: TextStyle(fontSize: 25),
                   )
                 ],
@@ -65,7 +118,9 @@ class chiTietLichSu extends StatelessWidget {
                 children: [
                   Padding(padding: EdgeInsets.only(left: 10, top: 80)),
                   Text(
-                    'Độ khó: Trung bình',
+                    widget.kq == null
+                        ? 'Độ khó: Trung bình'
+                        : 'Độ khó: ${widget.kq?.doKho}',
                     style: TextStyle(fontSize: 25),
                   )
                 ],
@@ -74,7 +129,9 @@ class chiTietLichSu extends StatelessWidget {
                 children: [
                   Padding(padding: EdgeInsets.only(left: 10, top: 80)),
                   Text(
-                    'Lĩnh vực: Lịch sử',
+                    widget.kq == null
+                        ? 'Lĩnh vực: Lịch sử'
+                        : 'Lĩnh vực: ${widget.kq?.linhVuc}',
                     style: TextStyle(fontSize: 25),
                   )
                 ],
@@ -83,7 +140,9 @@ class chiTietLichSu extends StatelessWidget {
                 children: [
                   Padding(padding: EdgeInsets.only(left: 10, top: 80)),
                   Text(
-                    'Điểm: 260',
+                    widget.kq == null
+                        ? 'Điểm: 260'
+                        : 'Điểm: ${widget.kq?.diem}',
                     style: TextStyle(fontSize: 25),
                   )
                 ],
@@ -92,7 +151,9 @@ class chiTietLichSu extends StatelessWidget {
                 children: [
                   Padding(padding: EdgeInsets.only(left: 10, top: 80)),
                   Text(
-                    'Thời gian: 21:09 - 22/10/2022',
+                    widget.kq == null
+                        ? 'Thời gian: 21:09 - 22/10/2022'
+                        : 'Thời gian: ${widget.kq?.thoiGian}',
                     style: TextStyle(fontSize: 25),
                   )
                 ],
@@ -103,7 +164,9 @@ class chiTietLichSu extends StatelessWidget {
                   Column(
                     children: [
                       Text(
-                        'Số đáp án đúng: 26/30',
+                        widget.kq == null
+                            ? 'Số đáp án đúng: 26/30'
+                            : 'Số đáp án đúng: ${widget.kq?.soDapAnDung}/10',
                         style: TextStyle(fontSize: 25),
                       )
                     ],
